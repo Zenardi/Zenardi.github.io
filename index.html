@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" id=top>
 
 <head>
   <meta charset="utf-8">
@@ -10,8 +10,8 @@
   <meta content="" name="keywords">
 
   <!-- Favicons -->
-  <link href="assets/img/favicon.png" rel="icon">
-  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+  <link href="assets/img/favicon.ico" rel="icon">
+  
 
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
@@ -36,7 +36,6 @@
 </head>
 
 <body>
-
   <!-- ======= Mobile nav toggle button ======= -->
   <button type="button" class="mobile-nav-toggle d-xl-none"><i class="icofont-navigation-menu"></i></button>
 
@@ -56,7 +55,8 @@
 
       <nav class="nav-menu">
         <ul>
-          <li class="active"><a href="#"><i class="bx bx-home"></i> <span>Home</span></a></li>
+          <!-- <li class="active"><a href="#top"><i class="bx bx-home"></i> <span>Home</span></a></li> -->
+          <li><a href="#top"><i class="bx bx-user"></i> <span>Home</span></a></li>
           <li><a href="#about"><i class="bx bx-user"></i> <span>About</span></a></li>
           <li><a href="#skills"><i class="bx bx-user"></i> <span>Skills</span></a></li>
           <li><a href="#resume"><i class="bx bx-file-blank"></i> <span>Resume</span></a></li>
@@ -188,36 +188,16 @@
 
           <div class=”gallery”>
             <figure class=”gallery__item gallery__item--1>
-              <img src="assets/img/tech/c-sharp.png" class="gallery__img img-fluid p-2" width="12%" alt="Image 1">
+              <img src="assets/img/tech/c-sharp.png" class="gallery__img img-fluid p-lg-2" width="12%" alt="Image 1">
               <img src="assets/img/tech/angualr.png" class="gallery__img img-fluid p-2" width="10%" alt="Image 2">
               <img src="assets/img/tech/aws.png" class="gallery__img img-fluid p-2" width="10%" alt="Image 3">
               <img src="assets/img/tech/azure.png" class="gallery__img img-fluid p-2" width="22%" alt="Image 4">
               <img src="assets/img/tech/devops.png" class="gallery__img img-fluid p-2" width="16%" alt="Image 5">
-              <img src="assets/img/tech/docker.png" class="gallery__img img-fluidp-2" width="20%" alt="Image 6">
+              <img src="assets/img/tech/docker.png" class="gallery__img img-fluid p-2" width="20%" alt="Image 6">
               <img src="assets/img/tech/k8s.png" class="gallery__img img-fluid p-2" width="16%" alt="Image 6">
-              <img src="assets/img/tech/spring.png" class="gallery__img img-fluid p-2" width="16%" alt="Image 6">
+              <img src="assets/img/tech/spring.png" class="gallery__img img-fluid p-2" width="18%" alt="Image 6">
             </figure>
-            
           </div>
-          
-            <!-- <article class="location-listing">
-              <div class="location-image">
-                  <img class="img-fluid w-25" src="assets/img/tech/c-sharp.png">
-                  <img class="img-fluid w-25" src="assets/img/tech/angualr.png">
-                  <img class="img-fluid w-25" src="assets/img/tech/aws.png">
-                  <img class="img-fluid w-25" src="assets/img/tech/azure.png">
-              </div>
-            </article>
-            <article class="location-listing">
-              <div class="location-image">
-                <img class="img-fluid w-25" src="assets/img/tech/devops.png">
-                <img class="img-fluid w-25" src="assets/img/tech/docker.png">
-                <img class="img-fluid w-25" src="assets/img/tech/k8s.png">
-                <img class="img-fluid w-25" src="assets/img/tech/spring.png">
-              </div>
-            </article> -->
-        
-
       </div>
     </section><!-- End Skills Section -->
 
@@ -291,8 +271,11 @@
             <div class="resume-item">
               <h4>Software Developer</h4>
               <h5>May 2018 - Present</h5>
-              <img class="img-fluid w-25" src="assets/img/CompanyLogos/Bosch-logo.jpg">
-              <p><em>BOSCH, Campinas, SP </em></p>
+              <div class="">
+                <img class="img-fluid w-25" src="assets/img/CompanyLogos/Bosch-logo.jpg">
+              </div>
+              <p><em>BOSCH, Campinas, SP </em> </p>
+              
               <ul>
                 <li>.NET Development (Troubleshooting, bug fix and new functionalities)</li>
                 <li>Octopus Deploy and New Relic for software deployment and monitoring</li>
@@ -304,8 +287,10 @@
             <div class="resume-item">
               <h4>DevOps Enginner</h4>
               <h5>Mar 2017 - May 2018</h5>
-              <img class="img-fluid" width="6%" src="assets/img/CompanyLogos/avatar.PNG.png">
-              <p><em>AVATAR SOLUÇÕES, Itu, SP</em></p>
+              <div class="">
+                <img class="img-fluid" width="8%" src="assets/img/CompanyLogos/avatar.PNG.png">
+              </div>
+              <p><em>AVATAR SOLUÇÕES, Itu, SP        </em></p>
               <ul>
                 <li>Amazon Cloud Server Management</li>
                 <li>Software Web Developer - C#, ASP.NET, MVC 3, MVC 5, Agile, JavaScript.</li>
@@ -318,8 +303,11 @@
             <div class="resume-item">
               <h4>Web Developer</h4>
               <h5>Nov 2015 - Jan 2017</h5>
-              <img class="img-fluid" width="6%" src="assets/img/CompanyLogos/sst.png">
+              <div class="">
+                <img class="img-fluid" width="7%" src="assets/img/CompanyLogos/sst.png">
+              </div>
               <p><em>SST IT SOLUTIONS, Itu, SP</em></p>
+              
               <ul>
                 <li>Project 1 – PPB Control System: Fix a web application to generate more precisely and detailed reports. Those modifications helped the company’s Research & Development team to a better understanding of the company manufacturing statistics. Those data are shown in government reports. [ASP.NET, C#, JAVASCRIPT]</li>
                 <li>Project 2 – Target Monitoring System: A system that displays the production line target per hour, per day and per shift. This system was highly requested to show if a specific line or station was overdue or in time. The system gives the ability to each line coordinator a better view of the manufacturing process.[ASP.NET, C#, JAVASCRIPT]</li>
@@ -328,7 +316,9 @@
             <div class="resume-item">
               <h4>Web Developer (Inter)</h4>
               <h5>Dec 2013 - Jan 2015</h5>
-              <img class="img-fluid w-25" src="assets/img/CompanyLogos/Bosch-logo.jpg">
+              <div class="">
+                <img class="img-fluid w-25" src="assets/img/CompanyLogos/Bosch-logo.jpg">
+              </div>
               <p><em>BOSCH, Campinas, SP</em></p>
               <ul>
                 <li>Web Raster: Parts assembly query system that helped all engineering areas from Bosch to assembling manufacturing parts. In addition, it increased the manufacturing process by 20%.</li>                
@@ -568,8 +558,140 @@
             </div>
           </div>
 
-        </div>
+          <div class="col-lg-4 col-md-6 portfolio-item filter-pluralsight">
+            <div class="portfolio-wrap">
+              <img src="assets/img/Certificates/ps/spring-actuator.png" class="img-fluid" alt="">
+              <div class="portfolio-links">
+                <a href="assets/img/Certificates/ps/spring-actuator.png" data-gall="portfolioGallery" class="venobox" title="Web 3"><i class="bx bx-plus"></i></a>
+              </div>
+            </div>
+            <div class="card-subtitle card-footer">
+              <p>Spring Actuator</p>
+            </div>
+          </div>
 
+
+          <div class="col-lg-4 col-md-6 portfolio-item filter-pluralsight">
+            <div class="portfolio-wrap">
+              <img src="assets/img/Certificates/ps/spring-big-picture.png" class="img-fluid" alt="">
+              <div class="portfolio-links">
+                <a href="assets/img/Certificates/ps/spring-big-picture.png" data-gall="portfolioGallery" class="venobox" title="Web 3"><i class="bx bx-plus"></i></a>
+              </div>
+            </div>
+            <div class="card-subtitle card-footer">
+              <p>Spring The Big Picture</p>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 portfolio-item filter-pluralsight">
+            <div class="portfolio-wrap">
+              <img src="assets/img/Certificates/ps/spring-cloud-fundamentals.png" class="img-fluid" alt="">
+              <div class="portfolio-links">
+                <a href="assets/img/Certificates/ps/spring-cloud-fundamentals.png" data-gall="portfolioGallery" class="venobox" title="Web 3"><i class="bx bx-plus"></i></a>
+              </div>
+            </div>
+            <div class="card-subtitle card-footer">
+              <p>Spring cloud Fundamentals</p>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 portfolio-item filter-pluralsight">
+            <div class="portfolio-wrap">
+              <img src="assets/img/Certificates/ps/spring-expressions.png" class="img-fluid" alt="">
+              <div class="portfolio-links">
+                <a href="assets/img/Certificates/ps/spring-expressions.png" data-gall="portfolioGallery" class="venobox" title="Web 3"><i class="bx bx-plus"></i></a>
+              </div>
+            </div>
+            <div class="card-subtitle card-footer">
+              <p>Spring Expressions Language</p>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 portfolio-item filter-pluralsight">
+            <div class="portfolio-wrap">
+              <img src="assets/img/Certificates/ps/spring-first-app.png" class="img-fluid" alt="">
+              <div class="portfolio-links">
+                <a href="assets/img/Certificates/ps/spring-first-app.png" data-gall="portfolioGallery" class="venobox" title="Web 3"><i class="bx bx-plus"></i></a>
+              </div>
+            </div>
+            <div class="card-subtitle card-footer">
+              <p>Spring First App</p>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 portfolio-item filter-pluralsight">
+            <div class="portfolio-wrap">
+              <img src="assets/img/Certificates/ps/spring-fundamentals.png" class="img-fluid" alt="">
+              <div class="portfolio-links">
+                <a href="assets/img/Certificates/ps/spring-fundamentals.png" data-gall="portfolioGallery" class="venobox" title="Web 3"><i class="bx bx-plus"></i></a>
+              </div>
+            </div>
+            <div class="card-subtitle card-footer">
+              <p>Spring Fundamentals</p>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 portfolio-item filter-pluralsight">
+            <div class="portfolio-wrap">
+              <img src="assets/img/Certificates/ps/spring-jdbc.png" class="img-fluid" alt="">
+              <div class="portfolio-links">
+                <a href="assets/img/Certificates/ps/spring-jdbc.png" data-gall="portfolioGallery" class="venobox" title="Web 3"><i class="bx bx-plus"></i></a>
+              </div>
+            </div>
+            <div class="card-subtitle card-footer">
+              <p>Spring JDBC</p>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 portfolio-item filter-pluralsight">
+            <div class="portfolio-wrap">
+              <img src="assets/img/Certificates/ps/spring-jpa-hibernate.png" class="img-fluid" alt="">
+              <div class="portfolio-links">
+                <a href="assets/img/Certificates/ps/spring-jpa-hibernate.png" data-gall="portfolioGallery" class="venobox" title="Web 3"><i class="bx bx-plus"></i></a>
+              </div>
+            </div>
+            <div class="card-subtitle card-footer">
+              <p>Spring JPA and Hibernate</p>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 portfolio-item filter-pluralsight">
+            <div class="portfolio-wrap">
+              <img src="assets/img/Certificates/ps/spring-jpa.png" class="img-fluid" alt="">
+              <div class="portfolio-links">
+                <a href="assets/img/Certificates/ps/spring-jpa.png" data-gall="portfolioGallery" class="venobox" title="Web 3"><i class="bx bx-plus"></i></a>
+              </div>
+            </div>
+            <div class="card-subtitle card-footer">
+              <p>Spring JPA</p>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 portfolio-item filter-pluralsight">
+            <div class="portfolio-wrap">
+              <img src="assets/img/Certificates/ps/spring-mvc.png" class="img-fluid" alt="">
+              <div class="portfolio-links">
+                <a href="assets/img/Certificates/ps/spring-mvc.png" data-gall="portfolioGallery" class="venobox" title="Web 3"><i class="bx bx-plus"></i></a>
+              </div>
+            </div>
+            <div class="card-subtitle card-footer">
+              <p>Spring MVC</p>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 portfolio-item filter-pluralsight">
+            <div class="portfolio-wrap">
+              <img src="assets/img/Certificates/ps/spring-security.png" class="img-fluid" alt="">
+              <div class="portfolio-links">
+                <a href="assets/img/Certificates/ps/spring-security.png" data-gall="portfolioGallery" class="venobox" title="Web 3"><i class="bx bx-plus"></i></a>
+              </div>
+            </div>
+            <div class="card-subtitle card-footer">
+              <p>Spring Secutiry</p>
+            </div>
+          </div>
+
+        </div>
       </div>
     </section><!-- End Portfolio Section -->
 
