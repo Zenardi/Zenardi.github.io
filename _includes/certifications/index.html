@@ -1,0 +1,246 @@
+<style>
+.cert-filters {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin: 2rem 0 3rem 0;
+}
+
+.cert-filters button {
+  padding: 0.75rem 1.5rem;
+  border: 2px solid #667eea;
+  background: white;
+  color: #667eea;
+  border-radius: 25px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
+}
+
+.cert-filters button.active {
+  background: #667eea;
+  color: white;
+}
+
+.cert-filters button:hover {
+  background: #667eea;
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
+}
+
+.certifications-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 2rem;
+  margin: 2rem 0;
+  width: 100%;
+}
+
+.cert-item {
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.cert-item.hidden {
+  display: none;
+}
+
+.cert-item:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+}
+
+.cert-image-wrapper {
+  position: relative;
+  overflow: hidden;
+  height: 220px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.cert-image-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.cert-item:hover .cert-image-wrapper img {
+  transform: scale(1.05);
+}
+
+.cert-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(102, 126, 234, 0.85);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.cert-item:hover .cert-overlay {
+  opacity: 1;
+}
+
+.cert-overlay a {
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  background: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  color: #667eea;
+  text-decoration: none;
+  transition: transform 0.3s ease;
+}
+
+.cert-overlay a:hover {
+  transform: scale(1.15);
+}
+
+.cert-content {
+  padding: 1.5rem;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.cert-content h4 {
+  margin: 0 0 0.75rem 0;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #333;
+  line-height: 1.4;
+}
+
+.cert-content p {
+  margin: 0;
+  color: #666;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  flex-grow: 1;
+}
+
+.cert-footer {
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid #eee;
+}
+
+.cert-footer a {
+  display: inline-block;
+  color: #667eea;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.85rem;
+  transition: color 0.3s ease;
+}
+
+.cert-footer a:hover {
+  color: #764ba2;
+  text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+  .certifications-container {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 1rem;
+  }
+
+  .cert-filters {
+    gap: 0.5rem;
+  }
+
+  .cert-filters button {
+    padding: 0.5rem 1rem;
+    font-size: 0.85rem;
+  }
+}
+</style>
+
+<div class="cert-filters">
+  <button class="filter-btn active" onclick="filterCategory('all')">All</button>
+  <button class="filter-btn" onclick="filterCategory('devops')">DevOps</button>
+  <button class="filter-btn" onclick="filterCategory('coding')">Coding</button>
+  <button class="filter-btn" onclick="filterCategory('sdc')">Self-Driving Cars</button>
+  <button class="filter-btn" onclick="filterCategory('ml')">Machine Learning & AI</button>
+  <button class="filter-btn" onclick="filterCategory('cloud')">Cloud/Kubernetes</button>
+</div>
+
+<div class="certifications-container">
+{% assign categories = include.source %}
+{% for category in categories %}
+  {% assign cat_slug = category.category | downcase | replace: ' ', '-' | replace: '/', '-' | replace: '&', '' %}
+  {% if cat_slug == 'devops' %}
+    {% assign filter_class = 'devops' %}
+  {% elsif cat_slug == 'coding' %}
+    {% assign filter_class = 'coding' %}
+  {% elsif cat_slug == 'self-driving-cars' %}
+    {% assign filter_class = 'sdc' %}
+  {% elsif cat_slug == 'machine-learning--ai' %}
+    {% assign filter_class = 'ml' %}
+  {% elsif cat_slug == 'cloud-kubernetes' %}
+    {% assign filter_class = 'cloud' %}
+  {% else %}
+    {% assign filter_class = 'other' %}
+  {% endif %}
+
+  {% for item in category.items %}
+  <div class="cert-item filter-{{ filter_class }}">
+    <div class="cert-image-wrapper">
+      <img src="{{ item.image | relative_url }}" alt="{{ item.title }}">
+      <div class="cert-overlay">
+        <a href="{{ item.image | relative_url }}" data-lightbox="certificates" title="{{ item.title }}">🔍</a>
+      </div>
+    </div>
+    <div class="cert-content">
+      <h4>{{ item.title }}</h4>
+      <p>{{ item.description }}</p>
+      {% if item.credential_url %}
+      <div class="cert-footer">
+        <a href="{{ item.credential_url }}" target="_blank">View Credential →</a>
+      </div>
+      {% endif %}
+    </div>
+  </div>
+  {% endfor %}
+{% endfor %}
+</div>
+
+<script>
+function filterCategory(category) {
+  const items = document.querySelectorAll('.cert-item');
+  const buttons = document.querySelectorAll('.filter-btn');
+  
+  buttons.forEach(btn => btn.classList.remove('active'));
+  event.target.classList.add('active');
+  
+  items.forEach(item => {
+    if (category === 'all') {
+      item.classList.remove('hidden');
+    } else {
+      if (item.classList.contains('filter-' + category)) {
+        item.classList.remove('hidden');
+      } else {
+        item.classList.add('hidden');
+      }
+    }
+  });
+}
+</script>
+

@@ -1,0 +1,143 @@
+- category: DevOps
+  items:
+    - title: Security License Compliance
+      description: Azure DevOps - Inspecting Open Source Software Packages for Security and License Compliance
+      image: assets/img/Certificates/DevOps/SecurityLicenseCompliance.png
+    - title: Monitoring Code Quality
+      description: Azure DevOps - Monitoring Code Quality
+      image: assets/img/Certificates/DevOps/MonitoringCodeQuality.png
+    - title: Feature Toggles, Package Management and Versioning
+      description: Azure DevOps - Feature Toggles, Package Management and Versioning
+      image: assets/img/Certificates/DevOps/FeatureToggles.png
+    - title: Inspecting Code Dependencies
+      description: Azure DevOps - Inspecting and Identifying Code Dependencies
+      image: assets/img/Certificates/DevOps/CodeDependencies.png
+    - title: Azure DevOps Tasks & Templates
+      description: Azure DevOps - Manage and Modularize Tasks and Templates
+      image: assets/img/Certificates/DevOps/AzureDevOpsTasksTemplates.png
+    - title: Automated Build Workflow
+      description: Azure DevOps - Creating an Automated Build Workflow
+      image: assets/img/Certificates/DevOps/AutomatedBuildWorkflow.png
+    - title: Application Testing
+      description: Application Testing with Azure DevOps
+      image: assets/img/Certificates/DevOps/ApplicationTesting.png
+    - title: Docker Mastery
+      description: Docker Mastery - The Complete Toolset From a Docker Captain
+      image: assets/img/Certificates/Dokcer-UC-FTDD92RV.jpg
+    - title: Swarm Mastery
+      description: Swarm Mastery - DevOps Style Cluster Orchestration
+      image: assets/img/Certificates/Swarm-UC-U9ALEMXZ.jpg
+    - title: AZ-300 Azure Architecture
+      description: AZ-300 Azure Architecture Technologies Certification Exam
+      image: assets/img/Certificates/UC-04J96DBJ.jpg
+    - title: Kubernetes Mastery
+      description: Kubernetes Mastery
+      image: assets/img/Certificates/UC-cd60f049-90cb-4e88-9a09-4fa058aaa27d.jpg
+    - title: Docker for Java Developers
+      description: Docker Hands On for Java Developers
+      image: assets/img/Certificates/UC-FL0Z1CE4.jpg
+    - title: Cloud DevOps
+      description: Cloud DevOps
+      image: assets/img/Certificates/2019-12-01_10h37_45.png
+
+- category: Coding
+  items:
+    - title: Entity Framework in Depth
+      description: Entity Framework in Depth
+      image: assets/img/Certificates/entity framework.jpg
+    - title: Kubernetes Microservices
+      description: Kubernetes Microservices
+      image: assets/img/Certificates/Kubernetes-UC-GVQX4P4Q.jpg
+    - title: Spring Core Advanced
+      description: Spring Core Advanced
+      image: assets/img/Certificates/Spring-UC-QPTUGEH1.jpg
+    - title: .NET CORE And Angular
+      description: .NET CORE And Angular
+      image: assets/img/Certificates/UC-49a6569c-1ae6-4538-9304-b859b82ecf98.jpg
+    - title: C# Unit Testing
+      description: C# Unit Testing
+      image: assets/img/Certificates/UC-T1STRWJY.jpg
+    - title: Spring Boot for Software Engineers
+      description: Spring Boot For Software Engineers
+      image: assets/img/Certificates/UC-T1STRWJY.jpg
+    - title: Heterogeneous Parallel Programming
+      description: Heterogeneous Parallel Programming
+      image: assets/img/Certificates/cuda.PNG.png
+    - title: Spring Actuator
+      description: Spring Actuator
+      image: assets/img/Certificates/ps/spring-actuator.png
+    - title: Spring The Big Picture
+      description: Spring The Big Picture
+      image: assets/img/Certificates/ps/spring-big-picture.png
+    - title: Spring Cloud Fundamentals
+      description: Spring Cloud Fundamentals
+      image: assets/img/Certificates/ps/spring-cloud-fundamentals.png
+    - title: Spring Expressions Language
+      description: Spring Expressions Language
+      image: assets/img/Certificates/ps/spring-expressions.png
+    - title: Spring First App
+      description: Spring First App
+      image: assets/img/Certificates/ps/spring-first-app.png
+    - title: Spring Fundamentals
+      description: Spring Fundamentals
+      image: assets/img/Certificates/ps/spring-fundamentals.png
+    - title: Spring JDBC
+      description: Spring JDBC
+      image: assets/img/Certificates/ps/spring-jdbc.png
+    - title: Spring JPA and Hibernate
+      description: Spring JPA and Hibernate
+      image: assets/img/Certificates/ps/spring-jpa-hibernate.png
+    - title: Spring JPA
+      description: Spring JPA
+      image: assets/img/Certificates/ps/spring-jpa.png
+    - title: Spring MVC
+      description: Spring MVC
+      image: assets/img/Certificates/ps/spring-mvc.png
+    - title: Spring Security
+      description: Spring Security
+      image: assets/img/Certificates/ps/spring-security.png
+
+- category: Self-Driving Cars
+  items:
+    - title: Self-Driving Cars Specialization
+      description: Self-Driving Cars Specialization
+      image: assets/img/Certificates/sdc/coursera-specialization.png
+    - title: Motion Planning for Self-Driving Cars
+      description: Motion Planning for Self-Driving Cars
+      image: assets/img/Certificates/sdc/coursera-motion-planning.png
+    - title: Visual Perception for Self-Driving Cars
+      description: Visual Perception for Self-Driving Cars
+      image: assets/img/Certificates/sdc/coursera-visual-perception.png
+    - title: State Estimation and Localization
+      description: State Estimation and Localization for Self-Driving Cars
+      image: assets/img/Certificates/sdc/coursera-state-estimation.png
+    - title: Introduction to Self-Driving Cars
+      description: Introduction to Self-Driving Cars (Coursera)
+      image: assets/img/Certificates/sdc/coursera-intro-sdc.png
+    - title: Intro to Self-Driving Cars
+      description: Intro to Self-Driving Cars (Udacity)
+      image: assets/img/Certificates/sdc/udacity-intro-sdc.png
+
+- category: Machine Learning & AI
+  items:
+    - title: Deep Learning
+      description: Deep Learning
+      image: assets/img/Certificates/deep-learning.PNG.png
+    - title: Machine Learning & AI Foundations
+      description: Machine Learning & AI Foundations
+      image: assets/img/Certificates/MachineLearning.png
+
+- category: Cloud/Kubernetes
+  items:
+    - title: Uncomplicating EKS
+      description: Uncomplicating EKS
+      image: assets/img/Certificates/cloud/Uncomplicating-EKS.png
+      credential_url: https://www.credential.net/55153a45-9b41-4dda-9a34-4d0abe833509#acc.VLZBetzM
+    - title: Argo CD and GitOps
+      description: Argo CD and Argo Rollouts for GitOps - The Definitive Guide
+      image: assets/img/Certificates/cloud/UC-argo-gitops.jpg
+      credential_url: https://www.udemy.com/certificate/UC-b2392796-2e89-42df-a9ae-a6cf90c6ed6e/
+    - title: Platform Engineering with Backstage & IDPs
+      description: From DevOps to Platform Engineering - Master Backstage & IDPs
+      image: assets/img/Certificates/cloud/udemy-idp-course.jpg
+      credential_url: https://www.udemy.com/certificate/UC-497d1ceb-19e5-431a-8c35-5279b1fa270d/

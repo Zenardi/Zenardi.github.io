@@ -1,0 +1,128 @@
+<style>
+.blog-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  margin: 2rem 0;
+  width: 100%;
+}
+
+.blog-card {
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-top: 5px solid #667eea;
+  display: flex;
+  flex-direction: column;
+}
+
+.blog-card:nth-child(2) {
+  border-top-color: #f093fb;
+}
+
+.blog-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+}
+
+.blog-card-header {
+  padding: 2rem;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+}
+
+.blog-card:nth-child(2) .blog-card-header {
+  background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+}
+
+.blog-card-header h3 {
+  margin: 0 0 0.75rem 0;
+  font-size: 1.4rem;
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+.blog-card-header .platform {
+  display: inline-block;
+  background: rgba(255, 255, 255, 0.2);
+  padding: 0.4rem 0.8rem;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+}
+
+.blog-card-body {
+  padding: 2rem;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.blog-card-body p {
+  margin: 0 0 1rem 0;
+  color: #555;
+  line-height: 1.6;
+}
+
+.blog-card-footer {
+  padding: 0 2rem 2rem 2rem;
+  margin-top: auto;
+}
+
+.blog-card-footer a {
+  display: inline-block;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 0.75rem 2rem;
+  border-radius: 25px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
+}
+
+.blog-card:nth-child(2) .blog-card-footer a {
+  background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+  box-shadow: 0 5px 15px rgba(240, 147, 251, 0.3);
+}
+
+.blog-card-footer a:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 25px rgba(102, 126, 234, 0.5);
+}
+
+.blog-card:nth-child(2) .blog-card-footer a:hover {
+  box-shadow: 0 8px 25px rgba(240, 147, 251, 0.5);
+}
+</style>
+
+<div class="blog-container">
+  <div class="blog-card">
+    <div class="blog-card-header">
+      <span class="platform">📰 Medium Article</span>
+      <h3>Stop Burning Money: Turning Prometheus Metrics into a Resource Planning Strategy</h3>
+    </div>
+    <div class="blog-card-body">
+      <p>Learn how to leverage Prometheus metrics to optimize your cloud infrastructure costs and implement effective resource planning strategies. Discover practical techniques to reduce unnecessary spending while maintaining system reliability.</p>
+    </div>
+    <div class="blog-card-footer">
+      <a href="https://medium.com/@du.zenardi/stop-burning-money-by-turning-prometheus-metrics-into-a-resource-planning-strategy-b2fc5bfa501f" target="_blank">Read on Medium →</a>
+    </div>
+  </div>
+
+  <div class="blog-card">
+    <div class="blog-card-header">
+      <span class="platform">📰 Medium Article</span>
+      <h3>De Ingress ao Gateway API: Automatizando TLS com Cert-Manager e Let's Encrypt</h3>
+    </div>
+    <div class="blog-card-body">
+      <p>Explore the evolution from Kubernetes Ingress to the newer Gateway API. Learn how to automate TLS certificate management using Cert-Manager and Let's Encrypt for secure, scalable applications.</p>
+    </div>
+    <div class="blog-card-footer">
+      <a href="https://medium.com/@du.zenardi/do-ingress-ao-gateway-api-automatizando-tls-com-cert-manager-e-lets-encrypt-52a2ee94e81d" target="_blank">Read on Medium →</a>
+    </div>
+  </div>
+</div>

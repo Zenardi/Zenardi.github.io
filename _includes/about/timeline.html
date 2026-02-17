@@ -1,0 +1,108 @@
+<style>
+.timeline-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  margin: 2rem 0;
+  width: 100%;
+}
+
+.resume-item {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-radius: 12px;
+  padding: 2.5rem;
+  color: white;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  width: 100%;
+  border-left: 5px solid rgba(255, 255, 255, 0.3);
+}
+
+.resume-item:nth-child(even) {
+  background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+}
+
+.resume-item:nth-child(3n) {
+  background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+}
+
+.resume-item:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+  border-left-color: rgba(255, 255, 255, 0.6);
+}
+
+.resume-item h4 {
+  font-size: 1.4rem;
+  margin: 0 0 0.5rem 0;
+  font-weight: 700;
+}
+
+.resume-item h5 {
+  font-size: 0.95rem;
+  margin: 0 0 1rem 0;
+  font-weight: 600;
+  opacity: 0.9;
+  font-style: italic;
+}
+
+.resume-item p {
+  margin: 0.75rem 0;
+  line-height: 1.6;
+  opacity: 0.95;
+}
+
+.resume-item em {
+  display: inline-block;
+  background: rgba(255, 255, 255, 0.15);
+  padding: 0.25rem 0.75rem;
+  border-radius: 20px;
+  font-style: normal;
+  margin-right: 0.5rem;
+}
+
+.resume-item ul {
+  list-style: none;
+  padding: 1rem 0 0 0;
+  margin: 0;
+}
+
+.resume-item li {
+  margin: 0.75rem 0;
+  padding-left: 1.5rem;
+  position: relative;
+  opacity: 0.9;
+  line-height: 1.5;
+}
+
+.resume-item li:before {
+  content: "→";
+  position: absolute;
+  left: 0;
+  color: rgba(255, 255, 255, 0.7);
+  font-weight: bold;
+}
+</style>
+
+<div class="timeline-container">
+{% assign data = include.source %}
+{% for item in data %}
+<div class="resume-item">
+<h4>{{ item.title }}</h4>
+<h5>{{ item.from }} - {{ item.to }}</h5>
+{% if item.company %}
+<p><em>{{ item.company }}</em></p>
+{% endif %}
+{% if item.description %}
+<p>{{ item.description }}</p>
+{% endif %}
+{% if item.highlights %}
+<ul>
+{% for highlight in item.highlights %}
+<li>{{ highlight }}</li>
+{% endfor %}
+</ul>
+{% endif %}
+</div>
+{% endfor %}
+</div>

@@ -1,0 +1,44 @@
+- title: Core Technical Skills
+  items:
+    - name: Cloud Platforms
+      description: AWS and Azure
+    - name: Containerization
+      description: Docker and Kubernetes
+    - name: Infrastructure as Code
+      description: Terraform, Helm, Crossplane
+    - name: CI/CD Pipelines
+      description: Jenkins, GitLab CI/CD, GitHub Actions, ArgoCD, Azure DevOps
+    - name: Configuration Management
+      description: Chef, Puppet, Ansible
+    - name: Monitoring and Logging
+      description: Prometheus, Grafana, ELK Stack, Splunk, Datadog, New Relic, Jaeger
+    - name: Scripting and Automation
+      description: Python, Bash, Go, PowerShell
+    - name: Version Control
+      description: Git, GitLab, Bitbucket
+    - name: Networking
+      description: TCP/IP, DNS, Load Balancers (HAProxy, NGINX), VPN
+    - name: Security
+      description: Secure Coding Practices, SSL/TLS
+
+- title: Additional Technical Skills
+  items:
+    - name: Service Mesh
+      description: Istio, Linkerd, Kong Mesh
+    - name: Database Management
+      description: SQL, NoSQL, Database Optimization and Scaling
+    - name: High Availability and Disaster Recovery
+      description: Multi-region deployment, Backup and Restore strategies
+    - name: Performance Tuning
+      description: Application performance monitoring, Infrastructure optimization
+    - name: Microservices Architecture
+      description: Design principles, Implementation strategies, Tools and frameworks
+
+- title: Soft Skills
+  items:
+    - name: Problem Solving
+      description: Analytical skills, Troubleshooting techniques
+    - name: Collaboration and Communication
+      description: Working in Agile/Scrum teams, Stakeholder communication, Documentation
+    - name: Leadership
+      description: Team management and Mentorships

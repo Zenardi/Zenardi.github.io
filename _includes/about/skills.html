@@ -1,0 +1,85 @@
+{% assign skills_data = include.source %}
+<style>
+.skills-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  margin: 2rem 0;
+  width: 100%;
+}
+
+.skill-category-card {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-radius: 12px;
+  padding: 2rem;
+  color: white;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  width: 100%;
+}
+
+.skill-category-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+}
+
+.skill-category-card:nth-child(2) {
+  background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+}
+
+.skill-category-card:nth-child(3) {
+  background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+}
+
+.skill-category-card h4 {
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+  font-weight: 700;
+  border-bottom: 3px solid rgba(255, 255, 255, 0.3);
+  padding-bottom: 0.75rem;
+}
+
+.skill-category-card ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.skill-category-card li {
+  margin: 1rem 0;
+  padding-left: 2rem;
+  position: relative;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  opacity: 0.95;
+}
+
+.skill-category-card li:before {
+  content: "▶";
+  position: absolute;
+  left: 0;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.75rem;
+  top: 0.25rem;
+}
+
+.skill-category-card strong {
+  display: block;
+  font-weight: 700;
+  margin-bottom: 0.25rem;
+  font-size: 1rem;
+}
+</style>
+
+<div class="skills-container">
+  {% for category in skills_data %}
+  <div class="skill-category-card">
+    <h4>{{ category.title }}</h4>
+    <ul>
+    {% for item in category.items %}
+      <li><strong>{{ item.name }}</strong>{{ item.description }}</li>
+    {% endfor %}
+    </ul>
+  </div>
+  {% endfor %}
+</div>
