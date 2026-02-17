@@ -129,6 +129,14 @@
 
 - category: Cloud/Kubernetes
   items:
+    - title: Uncomplicating Docker
+      description: Uncomplicating Docker
+      image: https://api.accredible.com/v1/frontend/credential_website_embed_image/certificate/174276016
+      credential_url: https://www.credential.net/48f830ac-2f4f-4cf5-bea1-61a6a8184a52#acc.9qlP4n3O
+    - title: Uncomplicating Promemetheus
+      description: Uncomplicating Promemetheus
+      image: https://api.accredible.com/v1/frontend/credential_website_embed_image/certificate/172134344
+      credential_url: https://www.credential.net/a51f8400-e5a5-4eb4-a88e-26f17daf83f4#acc.KfEVcxqs
     - title: Uncomplicating EKS
       description: Uncomplicating EKS
       image: assets/img/Certificates/cloud/Uncomplicating-EKS.png
