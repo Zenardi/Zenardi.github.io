@@ -99,6 +99,9 @@
 
 - category: Self-Driving Cars
   items:
+    - title: Self-Driving Cars Engineer
+      description: Self-Driving Cars Engineer
+      image: assets/img/Certificates/sdc/cert-sdc.png
     - title: Self-Driving Cars Specialization
       description: Self-Driving Cars Specialization
       image: assets/img/Certificates/sdc/coursera-specialization.png
