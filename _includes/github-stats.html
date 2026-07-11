@@ -1,0 +1,45 @@
+<!-- GitHub activity, computed at build time from jekyll-github-metadata.
+     No external service (avoids the flaky github-readme-stats deployments).
+     Styling lives in assets/css/style.scss (.gh-* classes). -->
+{% if site.github.public_repositories and site.github.public_repositories.size > 0 %}
+{% assign all_repos = site.github.public_repositories %}
+{% assign own = all_repos | where_exp: "r", "r.fork != true" %}
+{% assign repo_count = own | size %}
+{% assign total_stars = 0 %}
+{% for r in own %}{% assign total_stars = total_stars | plus: r.stargazers_count %}{% endfor %}
+{% assign langs = own | where_exp: "r", "r.language and r.language != ''" | group_by: "language" | sort: "size" | reverse %}
+{% assign lang_count = langs | size %}
+{% assign top_size = langs.first.size %}
+
+<section class="gh-stats">
+  <div class="gh-stats-inner">
+    <h2 class="gh-title wow animated fadeInUp"><i class="fab fa-github" aria-hidden="true"></i> GitHub Activity</h2>
+    <div class="gh-grid">
+
+      <div class="gh-card wow animated fadeInUp" data-wow-delay=".1s">
+        <div class="gh-metrics">
+          <div class="gh-metric"><span class="gh-metric-num">{{ repo_count }}</span><span class="gh-metric-label">Public repos</span></div>
+          <div class="gh-metric"><span class="gh-metric-num">{{ total_stars }}</span><span class="gh-metric-label">Stars earned</span></div>
+          <div class="gh-metric"><span class="gh-metric-num">{{ lang_count }}</span><span class="gh-metric-label">Languages</span></div>
+        </div>
+      </div>
+
+      <div class="gh-card wow animated fadeInUp" data-wow-delay=".15s">
+        <h3 class="gh-card-title">Most used languages</h3>
+        <div class="gh-langs">
+          {% for l in langs limit: 6 %}
+          <div class="gh-lang">
+            <div class="gh-lang-head"><span class="gh-lang-name">{{ l.name }}</span><span class="gh-lang-count">{{ l.size }}</span></div>
+            <div class="gh-bar"><span class="gh-bar-fill" style="width: {{ l.size | times: 100 | divided_by: top_size }}%"></span></div>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+
+    </div>
+    <a class="gh-profile-link wow animated fadeInUp" data-wow-delay=".2s" href="https://github.com/{{ site.author.github }}" target="_blank" rel="noopener">
+      <i class="fab fa-github" aria-hidden="true"></i> View full profile on GitHub
+    </a>
+  </div>
+</section>
+{% endif %}

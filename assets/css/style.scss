@@ -324,3 +324,34 @@ button:focus-visible,
   transform: translateY(-3px); background: var(--c-accent); color: var(--c-on-accent);
   border-color: var(--c-accent); box-shadow: var(--shadow-md); text-decoration: none;
 }
+
+/* ============================================================================
+   GitHub activity (home) — _includes/github-stats.html
+   ========================================================================== */
+.gh-stats { padding: 1rem 1rem 3.5rem; }
+.gh-stats-inner { max-width: 900px; margin: 0 auto; text-align: center; }
+.gh-title {
+  font-size: clamp(1.4rem, 3.4vw, 1.9rem); margin: 0 0 1.75rem; color: var(--c-text);
+  display: inline-flex; align-items: center; gap: 0.6rem;
+}
+.gh-title .fa-github { color: var(--c-accent-str); }
+.gh-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.25rem; text-align: left; }
+.gh-card {
+  background: var(--c-surface); border: 1px solid var(--c-border); border-radius: var(--radius);
+  padding: 1.75rem; box-shadow: var(--shadow-sm);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+.gh-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); border-color: var(--c-accent); }
+.gh-metrics { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; height: 100%; align-content: center; }
+.gh-metric { text-align: center; }
+.gh-metric-num { display: block; font-family: var(--font-mono); font-weight: 700; font-size: clamp(1.6rem, 5vw, 2.2rem); color: var(--c-accent-str); line-height: 1; }
+.gh-metric-label { display: block; font-size: 0.75rem; color: var(--c-text-muted); text-transform: uppercase; letter-spacing: 0.04em; margin-top: 0.4rem; }
+.gh-card-title { font-size: 1rem; margin: 0 0 1.1rem; color: var(--c-text); }
+.gh-langs { display: flex; flex-direction: column; gap: 0.7rem; }
+.gh-lang-head { display: flex; justify-content: space-between; font-size: 0.85rem; margin-bottom: 0.25rem; }
+.gh-lang-name { color: var(--c-text); font-weight: 500; }
+.gh-lang-count { color: var(--c-text-muted); font-family: var(--font-mono); }
+.gh-bar { height: 8px; background: var(--c-surface-2); border-radius: 999px; overflow: hidden; }
+.gh-bar-fill { display: block; height: 100%; border-radius: 999px; background: linear-gradient(90deg, var(--c-accent), #38BDF8); }
+.gh-profile-link { display: inline-flex; align-items: center; gap: 0.5rem; margin-top: 1.75rem; font-weight: 600; color: var(--c-accent-str); text-decoration: none; }
+.gh-profile-link:hover { text-decoration: underline; color: var(--c-accent-str); }
