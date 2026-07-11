@@ -18,9 +18,21 @@
 
       <div class="gh-card wow animated fadeInUp" data-wow-delay=".1s">
         <div class="gh-metrics">
-          <div class="gh-metric"><span class="gh-metric-num">{{ repo_count }}</span><span class="gh-metric-label">Public repos</span></div>
-          <div class="gh-metric"><span class="gh-metric-num">{{ total_stars }}</span><span class="gh-metric-label">Stars earned</span></div>
-          <div class="gh-metric"><span class="gh-metric-num">{{ lang_count }}</span><span class="gh-metric-label">Languages</span></div>
+          <div class="gh-metric">
+            <span class="gh-metric-icon"><i class="fas fa-code-branch" aria-hidden="true"></i></span>
+            <span class="gh-metric-num">{{ repo_count }}</span>
+            <span class="gh-metric-label">Public repos</span>
+          </div>
+          <div class="gh-metric">
+            <span class="gh-metric-icon"><i class="fas fa-star" aria-hidden="true"></i></span>
+            <span class="gh-metric-num">{{ total_stars }}</span>
+            <span class="gh-metric-label">Stars earned</span>
+          </div>
+          <div class="gh-metric">
+            <span class="gh-metric-icon"><i class="fas fa-code" aria-hidden="true"></i></span>
+            <span class="gh-metric-num">{{ lang_count }}</span>
+            <span class="gh-metric-label">Languages</span>
+          </div>
         </div>
       </div>
 
@@ -28,9 +40,35 @@
         <h3 class="gh-card-title">Most used languages</h3>
         <div class="gh-langs">
           {% for l in langs limit: 6 %}
+          {% assign lname = l.name | downcase %}
+          {% case lname %}
+            {% when 'hcl' %}{% assign lc = '#844FBA' %}
+            {% when 'go' %}{% assign lc = '#00ADD8' %}
+            {% when 'go template' %}{% assign lc = '#00ADD8' %}
+            {% when 'python' %}{% assign lc = '#3572A5' %}
+            {% when 'shell' %}{% assign lc = '#89E051' %}
+            {% when 'javascript' %}{% assign lc = '#F1E05A' %}
+            {% when 'typescript' %}{% assign lc = '#3178C6' %}
+            {% when 'jupyter notebook' %}{% assign lc = '#DA5B0B' %}
+            {% when 'html' %}{% assign lc = '#E34C26' %}
+            {% when 'css' %}{% assign lc = '#563D7C' %}
+            {% when 'scss' %}{% assign lc = '#C6538C' %}
+            {% when 'java' %}{% assign lc = '#B07219' %}
+            {% when 'c++' %}{% assign lc = '#F34B7D' %}
+            {% when 'c#' %}{% assign lc = '#178600' %}
+            {% when 'rust' %}{% assign lc = '#DEA584' %}
+            {% when 'ruby' %}{% assign lc = '#701516' %}
+            {% when 'powershell' %}{% assign lc = '#012456' %}
+            {% when 'dockerfile' %}{% assign lc = '#384D54' %}
+            {% when 'makefile' %}{% assign lc = '#427819' %}
+            {% else %}{% assign lc = '#0EA5E9' %}
+          {% endcase %}
           <div class="gh-lang">
-            <div class="gh-lang-head"><span class="gh-lang-name">{{ l.name }}</span><span class="gh-lang-count">{{ l.size }}</span></div>
-            <div class="gh-bar"><span class="gh-bar-fill" style="width: {{ l.size | times: 100 | divided_by: top_size }}%"></span></div>
+            <div class="gh-lang-head">
+              <span class="gh-lang-name"><span class="gh-lang-dot" style="background-color: {{ lc }}"></span>{{ l.name }}</span>
+              <span class="gh-lang-count">{{ l.size }}</span>
+            </div>
+            <div class="gh-bar"><span class="gh-bar-fill" style="width: {{ l.size | times: 100 | divided_by: top_size }}%; background: {{ lc }}"></span></div>
           </div>
           {% endfor %}
         </div>
