@@ -1,0 +1,57 @@
+<!-- Custom recruiter-focused hero. Shadows portfolYOU's _includes/landing.html.
+     Styling lives in assets/css/style.scss (.hero* classes). -->
+<section class="hero">
+  <div class="hero-inner">
+
+    <img class="hero-avatar wow animated zoomIn" data-wow-delay=".1s"
+         src="{{ site.author.image | relative_url }}" alt="{{ site.author.name }}">
+
+    <h1 class="hero-name wow animated fadeInUp" data-wow-delay=".15s">{{ site.author.name }}</h1>
+
+    {% if site.subtitle %}
+    <p class="hero-role wow animated fadeInUp" data-wow-delay=".2s">{{ site.subtitle }}</p>
+    {% endif %}
+
+    <p class="hero-tagline wow animated fadeInUp" data-wow-delay=".25s">{{ site.description }}</p>
+
+    <div class="hero-cta wow animated fadeInUp" data-wow-delay=".3s">
+      <a class="btn-cta" href="{{ '/assets/resume/OnePageResume.pdf' | relative_url }}" target="_blank" rel="noopener">
+        <i class="fas fa-file-download" aria-hidden="true"></i> Download Résumé
+      </a>
+      {% if site.author.linkedin %}
+      <a class="btn-cta-outline" href="https://www.linkedin.com/in/{{ site.author.linkedin }}" target="_blank" rel="noopener">
+        <i class="fab fa-linkedin" aria-hidden="true"></i> LinkedIn
+      </a>
+      {% endif %}
+      {% if site.author.github %}
+      <a class="btn-cta-outline" href="https://github.com/{{ site.author.github }}" target="_blank" rel="noopener">
+        <i class="fab fa-github" aria-hidden="true"></i> GitHub
+      </a>
+      {% endif %}
+    </div>
+
+    <ul class="hero-metrics wow animated fadeInUp" data-wow-delay=".35s">
+      <li class="metric"><span class="metric-num">10+</span><span class="metric-label">Years</span></li>
+      <li class="metric"><span class="metric-num">40%</span><span class="metric-label">Cloud cost&nbsp;&darr;</span></li>
+      <li class="metric"><span class="metric-num">50%</span><span class="metric-label">Fewer incidents</span></li>
+      <li class="metric"><span class="metric-num">48</span><span class="metric-label">Certifications</span></li>
+    </ul>
+
+    <div class="hero-tech wow animated fadeInUp" data-wow-delay=".4s" aria-label="Core technology stack">
+      {% assign stack = "aws:AWS,azure:Azure,k8s:Kubernetes,docker:Docker,terraform:Terraform,helm:Helm,ansible:Ansible,golang:Go,spring:Spring,sonarqube:SonarQube" | split: "," %}
+      {% for t in stack %}
+        {% assign pair = t | split: ":" %}
+        {% assign file = pair[0] %}
+        {% assign label = pair[1] %}
+        {% assign svg = "helm,sonarqube" | split: "," %}
+        {% if svg contains file %}{% assign ext = "svg" %}{% else %}{% assign ext = "png" %}{% endif %}
+        <img src="{{ '/assets/img/tech/' | append: file | append: '.' | append: ext | relative_url }}" alt="{{ label }}" title="{{ label }}" loading="lazy">
+      {% endfor %}
+    </div>
+
+    <div class="hero-social">
+      {% include social.html %}
+    </div>
+
+  </div>
+</section>

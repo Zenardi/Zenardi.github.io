@@ -2,22 +2,24 @@
   from: Dec 2020
   to: Present
   company: BOSCH, Campinas, SP
+  logo: assets/img/CompanyLogos/Bosch-logo.jpg
   description: Ensure the integrity, performance, reliability, and cost-effectiveness of cloud-based infrastructure and related systems supporting applications and platforms. Oversee and assist with software development, regular maintenance performance, and responding to escalated site reliability issues. Research industry best practices and steward resources for the team.
   highlights:
-    - Manage Kubernetes clusters and ensure the most cost-efficient configuration
     - Cloud on-boarding reducing costs by up to 40%
+    - Ensuring KPIs are being met, reducing customer reports by 50%
+    - Implemented observability and traceability stack with Prometheus/Grafana, ELK Stack, Jaeger
+    - Manage Kubernetes clusters and ensure the most cost-efficient configuration
     - Infrastructure automation with Terraform
     - Manage configurations with Ansible to deploy new features to IoT devices
-    - Ensuring KPIs are being met reducing customer reports by 50%
-    - Help to identify opportunities for infrastructure optimization and cost reduction
-    - Implemented observability and traceability stack with Prometheus/Grafana, ELK Stack, Jaeger
     - Implemented, configured, and managed Azure Databricks clusters
-    - CI/CD Pipelines with Azure DevOps, Jenkins and Github
+    - CI/CD pipelines with Azure DevOps, Jenkins and GitHub
+    - Help to identify opportunities for infrastructure optimization and cost reduction
 
 - title: Software Developer
   from: May 2018
   to: Dec 2020
   company: BOSCH, Campinas, SP
+  logo: assets/img/CompanyLogos/Bosch-logo.jpg
   description: New features development using enterprise standards and configuring CI/CD pipelines
   highlights:
     - Handling high-pressure situations, coordinating incident response efforts, and effectively communicating updates to stakeholders
@@ -27,6 +29,7 @@
   from: Mar 2017
   to: May 2018
   company: Avatar - Healthcare Solutions, Itu, SP
+  logo: assets/img/CompanyLogos/avatar.PNG.png
   description: Leveraging automation and cloud technologies (AWS), enabling faster and more reliable software delivery while fostering a culture of collaboration and continuous improvement.
   highlights:
     - Analyze system metrics, identify performance bottlenecks, and implement optimizations to enhance system performance, scalability, and reliability
@@ -36,6 +39,7 @@
   from: Nov 2015
   to: Jan 2017
   company: SST IT SOLUTIONS, Itu, SP
+  logo: assets/img/CompanyLogos/sst.png
   description: Back-end web development, utilizing the C# language and associated frameworks to build robust, secure, and scalable web applications. Skills in database integration, API development, testing, debugging, and security implementation to deliver efficient and reliable web solutions.
   highlights:
     - ASP.NET, C#, Javascript development
@@ -46,5 +50,6 @@
   from: Dec 2013
   to: Jan 2015
   company: BOSCH, Campinas, SP
+  logo: assets/img/CompanyLogos/Bosch-logo.jpg
   description: Web Raster - Parts assembly query system that helped all engineering areas from Bosch to assembling manufacturing parts. In addition, it increased the manufacturing process by 20%.
   highlights: []

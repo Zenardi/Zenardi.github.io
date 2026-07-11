@@ -33,7 +33,7 @@ nav_exclude:                                            # The following paths ar
 ### Author Info ###
 author:
   name              : Eduardo Zenardi
-  image             : images/profile.jpg
+  image             : assets/img/Pic/profile.jpg
 #  behance           : your_username
 # dribbble          : your_username
   email             : du.zenardi@gmail.com

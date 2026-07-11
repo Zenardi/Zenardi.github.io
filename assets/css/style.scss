@@ -1,0 +1,279 @@
+---
+# Front matter (required so Jekyll compiles this SCSS to /assets/css/style.css).
+# This file SHADOWS the portfolYOU theme's assets/css/style.scss. It keeps the
+# theme intact via `@import "portfolYOU"` and layers a slate + blue design system
+# (Inter / JetBrains Mono) on top, with full light/dark support.
+---
+
+// Google Fonts must be @import-ed before any rule (valid CSS order). The theme's
+// own Poppins @import is inlined by `@import "portfolYOU"` just below, also at top.
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap');
+
+@import "portfolYOU";
+
+/* ============================================================================
+   Design tokens — slate + blue, light and dark. portfolYOU sets data-theme on
+   <html>, so :root is the light default and [data-theme="dark"] overrides.
+   ========================================================================== */
+:root {
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, 'SFMono-Regular', Menlo, monospace;
+
+  --c-bg:          #F8FAFC;
+  --c-surface:     #FFFFFF;
+  --c-surface-2:   #F1F5F9;
+  --c-text:        #0F172A;
+  --c-text-muted:  #64748B;
+  --c-border:      #E2E8F0;
+  --c-primary:     #0F172A;
+  --c-accent:      #0369A1;
+  --c-accent-str:  #075985; /* stronger accent for text on light (>=4.5:1) */
+  --c-on-accent:   #FFFFFF;
+  --c-ring:        #0EA5E9;
+
+  --shadow-sm: 0 1px 2px rgba(15, 23, 42, 0.06);
+  --shadow-md: 0 6px 20px rgba(15, 23, 42, 0.08);
+  --shadow-lg: 0 16px 40px rgba(15, 23, 42, 0.14);
+  --radius:    14px;
+  --radius-sm: 10px;
+}
+
+[data-theme="dark"] {
+  --c-bg:          #0B1220;
+  --c-surface:     #111826;
+  --c-surface-2:   #0E1524;
+  --c-text:        #E5E9F0;
+  --c-text-muted:  #94A3B8;
+  --c-border:      #1E293B;
+  --c-primary:     #E5E9F0;
+  --c-accent:      #38BDF8;
+  --c-accent-str:  #7DD3FC;
+  --c-on-accent:   #06131F;
+  --c-ring:        #38BDF8;
+
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.4);
+  --shadow-md: 0 6px 20px rgba(0, 0, 0, 0.45);
+  --shadow-lg: 0 16px 40px rgba(0, 0, 0, 0.55);
+}
+
+/* ============================================================================
+   Base
+   ========================================================================== */
+body {
+  font-family: var(--font-sans);
+  letter-spacing: -0.01em;
+}
+
+h1, h2, h3, h4, h5, h6 { font-family: var(--font-sans); font-weight: 700; }
+
+/* Accessible focus ring for keyboard users on every interactive element. */
+a:focus-visible,
+button:focus-visible,
+[tabindex]:focus-visible {
+  outline: 3px solid var(--c-ring);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* Respect reduced-motion: neutralize hover transforms AND WOW.js reveals. */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: 0.001ms !important; transition: none !important; }
+  .wow { visibility: visible !important; animation: none !important; }
+}
+
+/* ============================================================================
+   Hero (home) — _includes/landing.html
+   ========================================================================== */
+.hero { padding: 3.5rem 1rem 2.5rem; }
+
+.hero-inner { max-width: 860px; margin: 0 auto; text-align: center; }
+
+.hero-avatar {
+  width: 168px; height: 168px; border-radius: 50%; object-fit: cover;
+  border: 4px solid var(--c-surface);
+  box-shadow: var(--shadow-lg);
+  margin-bottom: 1.5rem;
+}
+
+.hero-name {
+  font-size: clamp(2.1rem, 5vw, 3rem); line-height: 1.1; margin: 0 0 0.5rem;
+  color: var(--c-text);
+}
+
+.hero-role {
+  font-family: var(--font-mono); font-size: clamp(0.85rem, 2.2vw, 1.05rem);
+  font-weight: 500; color: var(--c-accent-str); margin: 0 0 1rem;
+  letter-spacing: 0;
+}
+
+.hero-tagline {
+  font-size: clamp(1rem, 2.4vw, 1.2rem); color: var(--c-text-muted);
+  max-width: 620px; margin: 0 auto 1.75rem; line-height: 1.6;
+}
+
+.hero-cta { display: flex; flex-wrap: wrap; gap: 0.75rem; justify-content: center; margin-bottom: 2rem; }
+
+.btn-cta, .btn-cta-outline {
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  min-height: 44px; padding: 0.7rem 1.5rem; border-radius: 999px;
+  font-weight: 600; font-size: 0.98rem; text-decoration: none;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+  cursor: pointer;
+}
+.btn-cta { background: var(--c-accent); color: var(--c-on-accent); box-shadow: var(--shadow-md); border: 2px solid var(--c-accent); }
+.btn-cta:hover { transform: translateY(-2px); box-shadow: var(--shadow-lg); color: var(--c-on-accent); text-decoration: none; }
+.btn-cta-outline { background: transparent; color: var(--c-accent-str); border: 2px solid var(--c-border); }
+.btn-cta-outline:hover { transform: translateY(-2px); border-color: var(--c-accent); color: var(--c-accent-str); text-decoration: none; }
+
+.hero-metrics {
+  list-style: none; padding: 0; margin: 0 auto 2rem; max-width: 640px;
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: 0.75rem;
+}
+.metric {
+  background: var(--c-surface); border: 1px solid var(--c-border); border-radius: var(--radius-sm);
+  padding: 0.9rem 0.5rem; box-shadow: var(--shadow-sm);
+}
+.metric-num { display: block; font-family: var(--font-mono); font-weight: 700; font-size: clamp(1.15rem, 3.4vw, 1.6rem); color: var(--c-accent-str); }
+.metric-label { display: block; font-size: 0.72rem; color: var(--c-text-muted); text-transform: uppercase; letter-spacing: 0.04em; margin-top: 0.2rem; }
+
+.hero-tech { display: flex; flex-wrap: wrap; gap: 1.1rem; justify-content: center; align-items: center; margin-top: 0.5rem; }
+.hero-tech img {
+  height: 30px; width: auto; filter: grayscale(1) opacity(0.7);
+  transition: filter 0.2s ease, transform 0.2s ease;
+}
+.hero-tech img:hover { filter: grayscale(0) opacity(1); transform: translateY(-3px); }
+
+.hero-social { margin-top: 1.5rem; }
+
+@media (max-width: 560px) {
+  .hero-metrics { grid-template-columns: repeat(2, 1fr); }
+}
+
+/* ============================================================================
+   Section headings on content pages
+   ========================================================================== */
+.section-eyebrow {
+  font-family: var(--font-mono); font-size: 0.8rem; font-weight: 500;
+  color: var(--c-accent-str); text-transform: uppercase; letter-spacing: 0.08em;
+}
+
+/* ============================================================================
+   Skills — _includes/about/skills.html
+   ========================================================================== */
+.skills-grid {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem; margin: 2rem 0; width: 100%;
+}
+.skill-card {
+  background: var(--c-surface); border: 1px solid var(--c-border); border-radius: var(--radius);
+  padding: 1.75rem; box-shadow: var(--shadow-sm);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+.skill-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); border-color: var(--c-accent); }
+.skill-card h4 {
+  font-size: 1.15rem; margin: 0 0 1.1rem; color: var(--c-text);
+  padding-bottom: 0.6rem; border-bottom: 2px solid var(--c-border);
+}
+.skill-card ul { list-style: none; padding: 0; margin: 0; }
+.skill-card li { margin: 0.85rem 0; padding-left: 1.4rem; position: relative; color: var(--c-text-muted); line-height: 1.55; font-size: 0.94rem; }
+.skill-card li::before { content: ""; position: absolute; left: 0; top: 0.55em; width: 7px; height: 7px; border-radius: 2px; background: var(--c-accent); }
+.skill-card strong { display: block; color: var(--c-text); font-weight: 600; margin-bottom: 0.15rem; }
+
+/* ============================================================================
+   Experience / Education timeline — _includes/about/timeline.html
+   ========================================================================== */
+.timeline-grid { display: grid; grid-template-columns: 1fr; gap: 1.5rem; margin: 2rem 0; width: 100%; }
+.resume-item {
+  background: var(--c-surface); border: 1px solid var(--c-border); border-left: 4px solid var(--c-accent);
+  border-radius: var(--radius); padding: 1.75rem 2rem; box-shadow: var(--shadow-sm);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.resume-item:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); }
+.resume-head { display: flex; align-items: center; gap: 1rem; flex-wrap: wrap; }
+.resume-logo { width: 46px; height: 46px; object-fit: contain; background: #fff; border-radius: 8px; padding: 4px; border: 1px solid var(--c-border); flex-shrink: 0; }
+.resume-headtext { min-width: 0; }
+.resume-item h4 { font-size: 1.25rem; margin: 0; color: var(--c-text); }
+.resume-company { color: var(--c-accent-str); font-weight: 600; font-size: 0.95rem; }
+.resume-dates { font-family: var(--font-mono); font-size: 0.8rem; color: var(--c-text-muted); margin-left: auto; white-space: nowrap; }
+.resume-item > p { color: var(--c-text-muted); line-height: 1.6; margin: 1rem 0 0; }
+.resume-item ul { list-style: none; padding: 0; margin: 1rem 0 0; }
+.resume-item li { margin: 0.6rem 0; padding-left: 1.6rem; position: relative; color: var(--c-text); line-height: 1.5; }
+.resume-item li::before { content: "\2713"; position: absolute; left: 0; color: var(--c-accent); font-weight: 700; }
+
+/* ============================================================================
+   Certifications — _includes/certifications/index.html
+   ========================================================================== */
+.cert-filters { display: flex; justify-content: center; flex-wrap: wrap; gap: 0.6rem; margin: 2rem 0 2.5rem; }
+.cert-filters button {
+  min-height: 44px; padding: 0.55rem 1.15rem; border: 1px solid var(--c-border); background: var(--c-surface);
+  color: var(--c-text); border-radius: 999px; cursor: pointer; font-weight: 600; font-size: 0.9rem;
+  transition: all 0.2s ease;
+}
+.cert-filters button.active { background: var(--c-accent); color: var(--c-on-accent); border-color: var(--c-accent); }
+.cert-filters button:hover { border-color: var(--c-accent); transform: translateY(-1px); }
+
+.certifications-container {
+  display: grid; grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+  gap: 1.5rem; margin: 1rem 0; width: 100%;
+}
+.cert-item {
+  background: var(--c-surface); border: 1px solid var(--c-border); border-radius: var(--radius);
+  overflow: hidden; box-shadow: var(--shadow-sm); display: flex; flex-direction: column;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+.cert-item.hidden { display: none; }
+.cert-item:hover { transform: translateY(-6px); box-shadow: var(--shadow-md); border-color: var(--c-accent); }
+.cert-image-wrapper { position: relative; overflow: hidden; height: 200px; background: var(--c-surface-2); }
+.cert-image-wrapper img { width: 100%; height: 100%; object-fit: contain; padding: 0.75rem; transition: transform 0.25s ease; }
+.cert-item:hover .cert-image-wrapper img { transform: scale(1.04); }
+.cert-zoom {
+  position: absolute; top: 0.6rem; right: 0.6rem; width: 40px; height: 40px; border: none;
+  background: rgba(15, 23, 42, 0.7); color: #fff; border-radius: 50%; cursor: pointer;
+  display: flex; align-items: center; justify-content: center; font-size: 1rem;
+  opacity: 0; transition: opacity 0.2s ease; backdrop-filter: blur(2px);
+}
+.cert-item:hover .cert-zoom, .cert-zoom:focus-visible { opacity: 1; }
+.cert-content { padding: 1.25rem; flex-grow: 1; display: flex; flex-direction: column; }
+.cert-content h4 { margin: 0 0 0.5rem; font-size: 1.02rem; font-weight: 600; color: var(--c-text); line-height: 1.35; }
+.cert-content p { margin: 0; color: var(--c-text-muted); font-size: 0.86rem; line-height: 1.5; flex-grow: 1; }
+.cert-verify {
+  display: inline-flex; align-items: center; gap: 0.35rem; margin-top: 1rem; min-height: 40px;
+  align-self: flex-start; padding: 0.4rem 0.9rem; border-radius: 999px;
+  background: var(--c-accent); color: var(--c-on-accent); font-weight: 600; font-size: 0.82rem;
+  text-decoration: none; transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.cert-verify:hover { transform: translateY(-1px); box-shadow: var(--shadow-md); color: var(--c-on-accent); text-decoration: none; }
+
+/* Self-contained lightbox (no external dependency) */
+.cert-lightbox {
+  position: fixed; inset: 0; z-index: 1050; display: none;
+  align-items: center; justify-content: center; padding: 2rem;
+  background: rgba(2, 6, 23, 0.85); backdrop-filter: blur(3px);
+}
+.cert-lightbox.open { display: flex; }
+.cert-lightbox img { max-width: 92vw; max-height: 86vh; border-radius: 8px; box-shadow: var(--shadow-lg); background: #fff; }
+.cert-lightbox-close {
+  position: absolute; top: 1rem; right: 1.25rem; width: 48px; height: 48px; border: none;
+  background: rgba(255,255,255,0.12); color: #fff; font-size: 1.6rem; border-radius: 50%; cursor: pointer;
+}
+
+/* ============================================================================
+   Blog cards — _includes/blog/index.html
+   ========================================================================== */
+.blog-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; margin: 2rem 0; width: 100%; }
+.blog-card {
+  background: var(--c-surface); border: 1px solid var(--c-border); border-top: 4px solid var(--c-accent);
+  border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow-sm);
+  display: flex; flex-direction: column; transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.blog-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-md); }
+.blog-card-body { padding: 1.75rem; flex-grow: 1; display: flex; flex-direction: column; }
+.blog-platform {
+  align-self: flex-start; font-family: var(--font-mono); font-size: 0.72rem; font-weight: 600;
+  text-transform: uppercase; letter-spacing: 0.05em; color: var(--c-accent-str);
+  background: var(--c-surface-2); padding: 0.25rem 0.6rem; border-radius: 6px; margin-bottom: 0.9rem;
+}
+.blog-card h3 { margin: 0 0 0.75rem; font-size: 1.2rem; line-height: 1.35; color: var(--c-text); }
+.blog-card p { margin: 0 0 1.25rem; color: var(--c-text-muted); line-height: 1.6; font-size: 0.92rem; flex-grow: 1; }
+.blog-readmore { align-self: flex-start; font-weight: 600; color: var(--c-accent-str); text-decoration: none; }
+.blog-readmore:hover { text-decoration: underline; color: var(--c-accent-str); }

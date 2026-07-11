@@ -16,18 +16,12 @@ I'm a Site Reliability Engineer with strong DevOps expertise and a passion for c
 {% include elements/button.html link="/assets/resume/OnePageResume.pdf" text="Download Resume (PDF)" style="success" %}
 </p>
 
-<div class="row">
 {% include about/skills.html source=site.data.skills %}
-</div>
 
 ## Professional Experience
 
-<div class="row">
 {% include about/timeline.html title="Professional Experience" source=site.data.professional-experience %}
-</div>
 
 ## Education
 
-<div class="row">
 {% include about/timeline.html title="Education" source=site.data.timeline %}
-</div>

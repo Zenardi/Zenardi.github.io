@@ -9,6 +9,4 @@ weight: 4
 
 Professional certifications and credentials demonstrating expertise in cloud technologies, DevOps, and infrastructure management.
 
-<div class="row">
 {% include certifications/index.html source=site.data.certifications %}
-</div>

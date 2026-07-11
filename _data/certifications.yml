@@ -1,3 +1,37 @@
+- category: Cloud/Kubernetes
+  items:
+    - title: Platform Engineering with Backstage & IDPs
+      description: From DevOps to Platform Engineering - Master Backstage & IDPs
+      image: assets/img/Certificates/cloud/udemy-idp-course.jpg
+      credential_url: https://www.udemy.com/certificate/UC-497d1ceb-19e5-431a-8c35-5279b1fa270d/
+    - title: Argo CD and GitOps
+      description: Argo CD and Argo Rollouts for GitOps - The Definitive Guide
+      image: assets/img/Certificates/cloud/UC-argo-gitops.jpg
+      credential_url: https://www.udemy.com/certificate/UC-b2392796-2e89-42df-a9ae-a6cf90c6ed6e/
+    - title: Uncomplicating EKS
+      description: Uncomplicating EKS
+      image: assets/img/Certificates/cloud/Uncomplicating-EKS.png
+      credential_url: https://www.credential.net/55153a45-9b41-4dda-9a34-4d0abe833509#acc.VLZBetzM
+    - title: Uncomplicating Kubernetes
+      description: Uncomplicating Kubernetes
+      image: assets/img/Certificates/cloud/Uncomplicating-Kubernetes.png
+      credential_url: https://www.credential.net/d46b579a-62c6-468b-bf56-0cfdfcab9811
+    - title: Uncomplicating Helm
+      description: Uncomplicating Helm
+      image: assets/img/Certificates/cloud/Uncomplicating-Helm.png
+      credential_url: https://www.credential.net/8a6e312c-c2e1-43a3-b400-46751796bdce
+    - title: Uncomplicating Prometheus
+      description: Uncomplicating Prometheus
+      image: https://api.accredible.com/v1/frontend/credential_website_embed_image/certificate/172134344
+      credential_url: https://www.credential.net/a51f8400-e5a5-4eb4-a88e-26f17daf83f4#acc.KfEVcxqs
+    - title: Uncomplicating Docker
+      description: Uncomplicating Docker
+      image: https://api.accredible.com/v1/frontend/credential_website_embed_image/certificate/174276016
+      credential_url: https://www.credential.net/48f830ac-2f4f-4cf5-bea1-61a6a8184a52#acc.9qlP4n3O
+    - title: Uncomplicating System Design
+      description: Uncomplicating System Design
+      image: assets/img/Certificates/cloud/Uncomplicating-SystemDesign.png
+      credential_url: https://www.credential.net/a47508ec-ec6e-4c68-a853-a2edf549d8a4
 
 - category: DevOps
   items:
@@ -57,7 +91,7 @@
       image: assets/img/Certificates/UC-49a6569c-1ae6-4538-9304-b859b82ecf98.jpg
     - title: C# Unit Testing
       description: C# Unit Testing
-      image: assets/img/Certificates/UC-T1STRWJY.jpg
+      image: assets/img/Certificates/Unit-Testing-UC-T1STRWJY.jpg
     - title: Spring Boot for Software Engineers
       description: Spring Boot For Software Engineers
       image: assets/img/Certificates/UC-T1STRWJY.jpg
@@ -98,6 +132,15 @@
       description: Spring Security
       image: assets/img/Certificates/ps/spring-security.png
 
+- category: Machine Learning & AI
+  items:
+    - title: Deep Learning
+      description: Deep Learning
+      image: assets/img/Certificates/deep-learning.PNG.png
+    - title: Machine Learning & AI Foundations
+      description: Machine Learning & AI Foundations
+      image: assets/img/Certificates/MachineLearning.png
+
 - category: Self-Driving Cars
   items:
     - title: Self-Driving Cars Engineer
@@ -121,49 +164,3 @@
     - title: Intro to Self-Driving Cars
       description: Intro to Self-Driving Cars (Udacity)
       image: assets/img/Certificates/sdc/udacity-intro-sdc.png
-
-- category: Machine Learning & AI
-  items:
-    - title: Deep Learning
-      description: Deep Learning
-      image: assets/img/Certificates/deep-learning.PNG.png
-    - title: Machine Learning & AI Foundations
-      description: Machine Learning & AI Foundations
-      image: assets/img/Certificates/MachineLearning.png
-
-- category: Cloud/Kubernetes
-  items:
-    - title: Uncomplicating Docker
-      description: Uncomplicating Docker
-      image: https://api.accredible.com/v1/frontend/credential_website_embed_image/certificate/174276016
-      credential_url: https://www.credential.net/48f830ac-2f4f-4cf5-bea1-61a6a8184a52#acc.9qlP4n3O
-    - title: Uncomplicating Promemetheus
-      description: Uncomplicating Promemetheus
-      image: https://api.accredible.com/v1/frontend/credential_website_embed_image/certificate/172134344
-      credential_url: https://www.credential.net/a51f8400-e5a5-4eb4-a88e-26f17daf83f4#acc.KfEVcxqs
-    - title: Uncomplicating EKS
-      description: Uncomplicating EKS
-      image: assets/img/Certificates/cloud/Uncomplicating-EKS.png
-      credential_url: https://www.credential.net/55153a45-9b41-4dda-9a34-4d0abe833509#acc.VLZBetzM
-    - title: Argo CD and GitOps
-      description: Argo CD and Argo Rollouts for GitOps - The Definitive Guide
-      image: assets/img/Certificates/cloud/UC-argo-gitops.jpg
-      credential_url: https://www.udemy.com/certificate/UC-b2392796-2e89-42df-a9ae-a6cf90c6ed6e/
-    - title: Platform Engineering with Backstage & IDPs
-      description: From DevOps to Platform Engineering - Master Backstage & IDPs
-      image: assets/img/Certificates/cloud/udemy-idp-course.jpg
-      credential_url: https://www.udemy.com/certificate/UC-497d1ceb-19e5-431a-8c35-5279b1fa270d/
-    - title: Uncomplicating Helm
-      description: Uncomplicating Helm
-      image: assets/img/Certificates/cloud/Uncomplicating-Helm.png
-      credential_url: https://www.credential.net/8a6e312c-c2e1-43a3-b400-46751796bdce
-    - title: Uncomplicating Kubernetes
-      description: Uncomplicating Kubernetes
-      image: assets/img/Certificates/cloud/Uncomplicating-Kubernetes.png
-      credential_url: https://www.credential.net/d46b579a-62c6-468b-bf56-0cfdfcab9811
-    - title: Uncomplicating System Design
-      description: Uncomplicating System Design
-      image: assets/img/Certificates/cloud/Uncomplicating-SystemDesign.png
-      credential_url: https://www.credential.net/a47508ec-ec6e-4c68-a853-a2edf549d8a4
-
-
