@@ -39,13 +39,10 @@
     </ul>
 
     <div class="hero-tech wow animated fadeInUp" data-wow-delay=".4s" aria-label="Core technology stack">
-      {% assign stack = "aws:AWS,azure:Azure,k8s:Kubernetes,docker:Docker,terraform:Terraform,helm:Helm,ansible:Ansible,golang:Go" | split: "," %}
+      {% assign stack = "aws:AWS,azure:Azure,kubernetes:Kubernetes,docker:Docker,helm:Helm,terraform:Terraform,ansible:Ansible,argocd:Argo CD,go:Go,rust:Rust" | split: "," %}
       {% for t in stack %}
         {% assign pair = t | split: ":" %}
-        {% assign file = pair[0] %}
-        {% assign label = pair[1] %}
-        {% if file == "helm" %}{% assign ext = "svg" %}{% else %}{% assign ext = "png" %}{% endif %}
-        <img src="{{ '/assets/img/tech/' | append: file | append: '.' | append: ext | relative_url }}" alt="{{ label }}" title="{{ label }}" loading="lazy">
+        <img src="{{ '/assets/img/stack/' | append: pair[0] | append: '.svg' | relative_url }}" alt="{{ pair[1] }}" title="{{ pair[1] }}" loading="lazy">
       {% endfor %}
     </div>
 

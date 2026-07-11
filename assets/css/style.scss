@@ -150,14 +150,14 @@ button:focus-visible,
 
 /* Tech stack contained in a subtle pill */
 .hero-tech {
-  display: flex; flex-wrap: wrap; gap: 1.1rem 1.7rem; justify-content: center; align-items: center;
-  max-width: 660px; margin: 0 auto; padding: 1rem 1.6rem;
+  display: flex; flex-wrap: wrap; gap: 1.1rem 1.5rem; justify-content: center; align-items: center;
+  max-width: 720px; margin: 0 auto; padding: 1rem 1.6rem;
   border: 1px solid var(--c-border); border-radius: 999px; background: var(--c-surface);
 }
-/* Render every logo as a uniform monochrome silhouette so mixed-brightness marks
-   (e.g. Helm, Terraform) stay visible and evenly weighted on either theme. */
+/* Uniform monochrome Simple Icons (24x24 marks) — recolor per theme so every
+   logo is the same visual weight and stays visible on either background. */
 .hero-tech img {
-  height: 34px; width: auto; opacity: 0.62;
+  height: 30px; width: 30px; object-fit: contain; opacity: 0.62;
   filter: brightness(0);
   transition: opacity 0.2s ease, transform 0.2s ease;
 }
