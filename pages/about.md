@@ -25,3 +25,7 @@ I'm a Site Reliability Engineer with strong DevOps expertise and a passion for c
 ## Education
 
 {% include about/timeline.html title="Education" source=site.data.timeline %}
+
+## Languages
+
+{% include about/languages.html source=site.data.languages %}

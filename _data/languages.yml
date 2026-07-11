@@ -1,0 +1,9 @@
+- name: Portuguese
+  level: Native
+  proficiency: 5
+- name: English
+  level: Advanced
+  proficiency: 4
+- name: German
+  level: Basic
+  proficiency: 2
