@@ -1,11 +1,10 @@
 {% assign data = include.source %}
 <div class="timeline-grid">
 {% for item in data %}
+{% if item.company %}{% assign ricon = 'fa-briefcase' %}{% else %}{% assign ricon = 'fa-graduation-cap' %}{% endif %}
 <div class="resume-item wow animated fadeInUp" data-wow-delay=".1s">
   <div class="resume-head">
-    {% if item.logo %}
-    <img class="resume-logo" src="{{ item.logo | relative_url }}" alt="{{ item.company | default: item.title | escape }} logo">
-    {% endif %}
+    <span class="resume-badge"><i class="fas {{ ricon }}" aria-hidden="true"></i></span>
     <div class="resume-headtext">
       <h4>{{ item.title }}</h4>
       {% if item.company %}<span class="resume-company">{{ item.company }}</span>{% endif %}

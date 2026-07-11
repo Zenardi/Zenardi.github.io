@@ -177,23 +177,31 @@ button:focus-visible,
    Skills — _includes/about/skills.html
    ========================================================================== */
 .skills-grid {
-  display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 1.5rem; margin: 2rem 0; width: 100%;
 }
 .skill-card {
   background: var(--c-surface); border: 1px solid var(--c-border); border-radius: var(--radius);
-  padding: 1.75rem; box-shadow: var(--shadow-sm);
+  padding: 1.6rem 1.75rem; box-shadow: var(--shadow-sm);
   transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
 }
 .skill-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); border-color: var(--c-accent); }
-.skill-card h4 {
-  font-size: 1.15rem; margin: 0 0 1.1rem; color: var(--c-text);
-  padding-bottom: 0.6rem; border-bottom: 2px solid var(--c-border);
+.skill-card-head { display: flex; align-items: center; gap: 0.8rem; margin-bottom: 1rem; padding-bottom: 0.9rem; border-bottom: 1px solid var(--c-border); }
+.skill-icon {
+  width: 40px; height: 40px; flex-shrink: 0; display: inline-flex; align-items: center; justify-content: center;
+  border-radius: 11px; background: linear-gradient(135deg, var(--c-accent), #38BDF8); color: #fff;
+  font-size: 1.05rem; box-shadow: var(--shadow-sm);
 }
+.skill-card h4 { font-size: 1.1rem; margin: 0; color: var(--c-text); }
 .skill-card ul { list-style: none; padding: 0; margin: 0; }
-.skill-card li { margin: 0.85rem 0; padding-left: 1.4rem; position: relative; color: var(--c-text-muted); line-height: 1.55; font-size: 0.94rem; }
-.skill-card li::before { content: ""; position: absolute; left: 0; top: 0.55em; width: 7px; height: 7px; border-radius: 2px; background: var(--c-accent); }
-.skill-card strong { display: block; color: var(--c-text); font-weight: 600; margin-bottom: 0.15rem; }
+.skill-card li {
+  display: flex; flex-direction: column; gap: 0.1rem;
+  padding: 0.6rem 0 0.6rem 1.2rem; position: relative; border-bottom: 1px solid var(--c-border);
+}
+.skill-card li:last-child { border-bottom: none; padding-bottom: 0; }
+.skill-card li::before { content: ""; position: absolute; left: 0; top: 0.95rem; width: 6px; height: 6px; border-radius: 50%; background: var(--c-accent); }
+.skill-name { font-weight: 600; color: var(--c-text); font-size: 0.95rem; }
+.skill-desc { font-size: 0.86rem; color: var(--c-text-muted); line-height: 1.45; }
 
 /* ============================================================================
    Experience / Education timeline — _includes/about/timeline.html
@@ -206,7 +214,11 @@ button:focus-visible,
 }
 .resume-item:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); }
 .resume-head { display: flex; align-items: center; gap: 1rem; flex-wrap: wrap; }
-.resume-logo { width: 46px; height: 46px; object-fit: contain; background: #fff; border-radius: 8px; padding: 4px; border: 1px solid var(--c-border); flex-shrink: 0; }
+.resume-badge {
+  width: 40px; height: 40px; flex-shrink: 0; display: inline-flex; align-items: center; justify-content: center;
+  border-radius: 10px; background: linear-gradient(135deg, var(--c-accent), #38BDF8); color: #fff;
+  font-size: 1rem; box-shadow: var(--shadow-sm);
+}
 .resume-headtext { min-width: 0; }
 .resume-item h4 { font-size: 1.25rem; margin: 0; color: var(--c-text); }
 .resume-company { color: var(--c-accent-str); font-weight: 600; font-size: 0.95rem; }

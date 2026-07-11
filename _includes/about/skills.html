@@ -1,11 +1,22 @@
 {% assign skills_data = include.source %}
 <div class="skills-grid">
   {% for category in skills_data %}
+  {% assign t = category.title | downcase %}
+  {% if t contains 'core' %}{% assign icon = 'fa-layer-group' %}
+  {% elsif t contains 'additional' %}{% assign icon = 'fa-cubes' %}
+  {% elsif t contains 'soft' %}{% assign icon = 'fa-user-friends' %}
+  {% else %}{% assign icon = 'fa-check' %}{% endif %}
   <div class="skill-card wow animated fadeInUp" data-wow-delay=".1s">
-    <h4>{{ category.title }}</h4>
+    <div class="skill-card-head">
+      <span class="skill-icon"><i class="fas {{ icon }}" aria-hidden="true"></i></span>
+      <h4>{{ category.title }}</h4>
+    </div>
     <ul>
     {% for item in category.items %}
-      <li><strong>{{ item.name }}</strong>{{ item.description }}</li>
+      <li>
+        <span class="skill-name">{{ item.name }}</span>
+        <span class="skill-desc">{{ item.description }}</span>
+      </li>
     {% endfor %}
     </ul>
   </div>
