@@ -116,3 +116,5 @@ exclude:
   - CONTRIBUTING.md
   - LICENSE
   - "*.log"
+  - CLAUDE.md
+  - .claude

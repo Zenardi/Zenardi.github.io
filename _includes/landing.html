@@ -3,8 +3,9 @@
 <section class="hero">
   <div class="hero-inner">
 
-    <img class="hero-avatar wow animated zoomIn" data-wow-delay=".1s"
-         src="{{ site.author.image | relative_url }}" alt="{{ site.author.name }}">
+    <div class="hero-avatar-wrap wow animated zoomIn" data-wow-delay=".1s">
+      <img class="hero-avatar" src="{{ site.author.image | relative_url }}" alt="{{ site.author.name }}">
+    </div>
 
     <h1 class="hero-name wow animated fadeInUp" data-wow-delay=".15s">{{ site.author.name }}</h1>
 
@@ -38,19 +39,14 @@
     </ul>
 
     <div class="hero-tech wow animated fadeInUp" data-wow-delay=".4s" aria-label="Core technology stack">
-      {% assign stack = "aws:AWS,azure:Azure,k8s:Kubernetes,docker:Docker,terraform:Terraform,helm:Helm,ansible:Ansible,golang:Go,spring:Spring,sonarqube:SonarQube" | split: "," %}
+      {% assign stack = "aws:AWS,azure:Azure,k8s:Kubernetes,docker:Docker,terraform:Terraform,helm:Helm,ansible:Ansible,golang:Go" | split: "," %}
       {% for t in stack %}
         {% assign pair = t | split: ":" %}
         {% assign file = pair[0] %}
         {% assign label = pair[1] %}
-        {% assign svg = "helm,sonarqube" | split: "," %}
-        {% if svg contains file %}{% assign ext = "svg" %}{% else %}{% assign ext = "png" %}{% endif %}
+        {% if file == "helm" %}{% assign ext = "svg" %}{% else %}{% assign ext = "png" %}{% endif %}
         <img src="{{ '/assets/img/tech/' | append: file | append: '.' | append: ext | relative_url }}" alt="{{ label }}" title="{{ label }}" loading="lazy">
       {% endfor %}
-    </div>
-
-    <div class="hero-social">
-      {% include social.html %}
     </div>
 
   </div>
