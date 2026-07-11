@@ -85,6 +85,8 @@ bundle exec jekyll clean
 ├── _projects/            # Project descriptions
 ├── _data/                # Data files (YAML)
 │   ├── skills.yml
+│   ├── programming-skills.yml
+│   ├── other-skills.yml
 │   ├── professional-experience.yml
 │   ├── timeline.yml
 │   ├── certifications.yml
@@ -226,6 +228,22 @@ bundle install --path vendor/bundle
 - [portfolYOU Theme](https://github.com/yousinix/portfolYOU)
 - [GitHub Pages Documentation](https://docs.github.com/en/pages)
 - [Markdown Guide](https://www.markdownguide.org/)
+
+## 🤖 Claude Code
+
+This repo is set up for [Claude Code](https://claude.ai/code). `CLAUDE.md` gives Claude
+the project conventions (remote theme, build commands, content model), and a few
+slash-command skills speed up common content tasks:
+
+| Command | Description |
+|---------|-------------|
+| `/add-cert` | Add a certification to `_data/certifications.yml` and place its badge image |
+| `/new-post` | Scaffold a `_posts/YYYY-MM-DD-title.md` blog post with the right front matter |
+| `/new-project` | Scaffold a numbered `_projects/(N) Name.md` project file |
+| `/serve` | Run the local Jekyll dev server |
+
+A PostToolUse hook also validates any edited `_data/*.yml` file so a YAML typo can't
+silently break the GitHub Pages build.
 
 ## 📄 License
 
