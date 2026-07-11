@@ -3,13 +3,14 @@
   {% for lang in languages %}
   <div class="lang-card wow animated fadeInUp" data-wow-delay=".1s">
     <div class="lang-head">
-      <span class="lang-name">{{ lang.name }}</span>
-      <span class="lang-level">{{ lang.level }}</span>
+      <span class="lang-icon"><i class="fas fa-language" aria-hidden="true"></i></span>
+      <div class="lang-headtext">
+        <span class="lang-name">{{ lang.name }}</span>
+        <span class="lang-level">{{ lang.level }}</span>
+      </div>
     </div>
-    <div class="lang-dots" role="img" aria-label="{{ lang.name }}: {{ lang.level }}">
-      {% for i in (1..5) %}
-      <span class="lang-dot{% if i <= lang.proficiency %} filled{% endif %}"></span>
-      {% endfor %}
+    <div class="lang-meter" role="img" aria-label="{{ lang.name }}: {{ lang.level }}">
+      <span class="lang-meter-fill" style="width: {{ lang.proficiency | times: 20 }}%"></span>
     </div>
   </div>
   {% endfor %}
