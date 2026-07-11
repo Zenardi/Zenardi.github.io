@@ -1,0 +1,15 @@
+<!-- Social links (footer). Shadows portfolYOU's _includes/social.html.
+     Styling lives in assets/css/style.scss (.social-link). -->
+<div class="social-links">
+  {% for account in site.author %}
+    {%- assign service_name = account[0] -%}
+    {%- assign service_data = site.data.social-media[service_name] -%}
+    {%- if service_data -%}
+    <a class="social-link" href="{{ service_data.url }}{{ account[1] }}"
+       aria-label="{{ service_name }}"
+       {% unless service_name == 'email' %}target="_blank" rel="noopener"{% endunless %}>
+      <i class="{{ service_data.icon }}" aria-hidden="true"></i>
+    </a>
+    {%- endif -%}
+  {% endfor %}
+</div>
