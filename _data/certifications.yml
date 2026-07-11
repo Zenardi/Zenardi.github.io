@@ -153,3 +153,17 @@
       description: From DevOps to Platform Engineering - Master Backstage & IDPs
       image: assets/img/Certificates/cloud/udemy-idp-course.jpg
       credential_url: https://www.udemy.com/certificate/UC-497d1ceb-19e5-431a-8c35-5279b1fa270d/
+    - title: Uncomplicating Helm
+      description: Uncomplicating Helm
+      image: assets/img/Certificates/cloud/Uncomplicating-Helm.png
+      credential_url: https://www.credential.net/8a6e312c-c2e1-43a3-b400-46751796bdce
+    - title: Uncomplicating Kubernetes
+      description: Uncomplicating Kubernetes
+      image: assets/img/Certificates/cloud/Uncomplicating-Kubernetes.png
+      credential_url: https://www.credential.net/d46b579a-62c6-468b-bf56-0cfdfcab9811
+    - title: Uncomplicating System Design
+      description: Uncomplicating System Design
+      image: assets/img/Certificates/cloud/Uncomplicating-SystemDesign.png
+      credential_url: https://www.credential.net/a47508ec-ec6e-4c68-a853-a2edf549d8a4
+
+
