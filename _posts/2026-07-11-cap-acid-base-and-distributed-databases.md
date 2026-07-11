@@ -6,8 +6,6 @@ color: primary
 description: A practical tour of the trade-offs behind distributed databases — the CAP theorem, ACID vs BASE, the "pick two" combinations, and how PACELC extends the picture beyond network partitions.
 ---
 
-> This article is an English adaptation of my study notes on distributed-database trade-offs, based on Matheus Fidelis's original (Portuguese) piece, *"System Design — Teorema CAP, ACID, BASE e Bancos de Dados Distribuídos"* ([fidelissauro.dev/teorema-cap](https://fidelissauro.dev/teorema-cap/)). Full credit for the original framing and illustrations goes to the author — I recommend reading the source. Any errors introduced in translation and rework are my own.
-
 Choosing a database for a distributed system is rarely about picking the "fastest" or the "most popular" option. It's about understanding what you are willing to give up. Every distributed data store makes a deliberate trade-off between **consistency**, **availability**, and its behaviour when the network misbehaves — and the theory that frames those trade-offs is the **CAP theorem**.
 
 This post walks through CAP from the ground up: first the transactional guarantees (**ACID** and **BASE**) that give CAP its vocabulary, then the theorem itself and its "pick two" combinations, and finally **PACELC** — the extension that asks the question CAP leaves unanswered: *what do you optimise for when the network is healthy?*
