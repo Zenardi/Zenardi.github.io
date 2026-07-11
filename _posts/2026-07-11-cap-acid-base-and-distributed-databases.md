@@ -233,4 +233,3 @@ PACELC became a practical way to **classify** distributed systems into combinati
 - [PACELC design principle — Wikipedia](https://en.wikipedia.org/wiki/PACELC_design_principle)
 - [What is the CAP theorem? — IBM](https://www.ibm.com/topics/cap-theorem)
 - [Understanding Eventual Consistency in DynamoDB — Alex DeBrie](https://www.alexdebrie.com/posts/dynamodb-eventual-consistency/)
-- **Original article (Portuguese):** [Matheus Fidelis — System Design: Teorema CAP, ACID, BASE e Bancos de Dados Distribuídos](https://fidelissauro.dev/teorema-cap/)
