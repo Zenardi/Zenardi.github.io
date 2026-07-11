@@ -1,7 +1,17 @@
-<!-- Blog highlights. Styling in assets/css/style.scss (.blog-* classes). -->
+<!-- Blog highlights. Styling in assets/css/style.scss (.blog-* classes).
+     The first card is a site-hosted article (_posts/); the rest link to Medium. -->
 <div class="blog-grid">
 
-  <article class="blog-card wow animated fadeInUp" data-wow-delay=".1s">
+  <article class="blog-card blog-card--featured wow animated fadeInUp" data-wow-delay=".1s">
+    <div class="blog-card-body">
+      <span class="blog-platform blog-platform--featured">Deep Dive</span>
+      <h3>System Design: The CAP Theorem, ACID, BASE &amp; Distributed Databases</h3>
+      <p>A practical tour of the trade-offs behind distributed databases — the CAP theorem, ACID vs BASE, the "pick two" combinations, and how PACELC extends the picture beyond network partitions.</p>
+      <a class="blog-readmore" href="{{ '/blog/cap-acid-base-and-distributed-databases' | relative_url }}">Read article &rarr;</a>
+    </div>
+  </article>
+
+  <article class="blog-card wow animated fadeInUp" data-wow-delay=".15s">
     <div class="blog-card-body">
       <span class="blog-platform">Medium</span>
       <h3>Stop Burning Money: Turning Prometheus Metrics into a Resource Planning Strategy</h3>
@@ -10,7 +20,7 @@
     </div>
   </article>
 
-  <article class="blog-card wow animated fadeInUp" data-wow-delay=".15s">
+  <article class="blog-card wow animated fadeInUp" data-wow-delay=".2s">
     <div class="blog-card-body">
       <span class="blog-platform">Medium</span>
       <h3>De Ingress ao Gateway API: Automatizando TLS com Cert-Manager e Let's Encrypt</h3>

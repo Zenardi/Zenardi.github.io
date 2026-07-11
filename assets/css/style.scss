@@ -329,6 +329,11 @@ button:focus-visible,
 .blog-card p { margin: 0 0 1.25rem; color: var(--c-text-muted); line-height: 1.6; font-size: 0.92rem; flex-grow: 1; }
 .blog-readmore { align-self: flex-start; font-weight: 600; color: var(--c-accent-str); text-decoration: none; }
 .blog-readmore:hover { text-decoration: underline; color: var(--c-accent-str); }
+/* Featured card = a site-hosted original article (not an external Medium link). */
+.blog-card--featured { border-top-width: 4px; box-shadow: var(--shadow-md); }
+.blog-platform--featured {
+  color: #fff; background: linear-gradient(135deg, var(--c-accent), #38BDF8);
+}
 
 /* ============================================================================
    Social links (footer) — _includes/social.html
