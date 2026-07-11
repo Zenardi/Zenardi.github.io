@@ -7,7 +7,7 @@
 {% assign repo_count = own | size %}
 {% assign total_stars = 0 %}
 {% for r in own %}{% assign total_stars = total_stars | plus: r.stargazers_count %}{% endfor %}
-{% assign langs = own | where_exp: "r", "r.language and r.language != ''" | group_by: "language" | sort: "size" | reverse %}
+{% assign langs = own | where_exp: "r", "r.language" | group_by: "language" | sort: "size" | reverse %}
 {% assign lang_count = langs | size %}
 {% assign top_size = langs.first.size %}
 
