@@ -1,7 +1,6 @@
 ---
 name: Azure FinOps Optimizer
 tools: [Python, FastAPI, Next.js, Azure, PostgreSQL, Grafana, Docker]
-image: assets/img/tech/azure.png
 description: A cost analysis and optimization platform for Azure that collects spending and utilization data, generates AI-powered right-sizing recommendations, and executes remediation actions through guarded approval workflows.
 external_url: https://github.com/Zenardi/azure-finops
 ---
