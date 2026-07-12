@@ -15,6 +15,37 @@
 
     <p class="hero-tagline wow animated fadeInUp" data-wow-delay=".25s">{{ site.description }}</p>
 
+    <!-- Dual citizenship / EU work authorization — recruiter hiring signal.
+         Inline SVG circular flags (not emoji: Windows renders flag emoji as "BR"/"IT" letters). -->
+    <div class="hero-citizenship wow animated fadeInUp" data-wow-delay=".27s">
+      <span class="cz-chip">
+        <svg class="cz-flag" viewBox="0 0 24 24" width="20" height="20" role="img" aria-label="Brazil flag" focusable="false">
+          <defs><clipPath id="czBr"><circle cx="12" cy="12" r="12"/></clipPath></defs>
+          <g clip-path="url(#czBr)">
+            <rect width="24" height="24" fill="#009C3B"/>
+            <polygon points="12,3 21,12 12,21 3,12" fill="#FFDF00"/>
+            <circle cx="12" cy="12" r="4.3" fill="#002776"/>
+          </g>
+        </svg>
+        Brazilian
+      </span>
+      <span class="cz-chip">
+        <svg class="cz-flag" viewBox="0 0 24 24" width="20" height="20" role="img" aria-label="Italy flag" focusable="false">
+          <defs><clipPath id="czIt"><circle cx="12" cy="12" r="12"/></clipPath></defs>
+          <g clip-path="url(#czIt)">
+            <rect x="0" y="0" width="8" height="24" fill="#008C45"/>
+            <rect x="8" y="0" width="8" height="24" fill="#F4F5F0"/>
+            <rect x="16" y="0" width="8" height="24" fill="#CD212A"/>
+          </g>
+        </svg>
+        Italian <span class="cz-badge">EU</span>
+      </span>
+    </div>
+    <p class="cz-note wow animated fadeInUp" data-wow-delay=".29s">
+      <i class="fas fa-passport" aria-hidden="true"></i>
+      Dual citizen — authorized to work across the EU &amp; Brazil, no visa sponsorship required
+    </p>
+
     <div class="hero-cta wow animated fadeInUp" data-wow-delay=".3s">
       <a class="btn-cta" href="{{ '/assets/resume/OnePageResume.pdf' | relative_url }}" target="_blank" rel="noopener">
         <i class="fas fa-file-download" aria-hidden="true"></i> Download Résumé
