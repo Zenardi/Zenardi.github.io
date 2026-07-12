@@ -29,7 +29,16 @@
     </div>
   </article>
 
-  <article class="blog-card wow animated fadeInUp" data-wow-delay=".25s">
+  <article class="blog-card blog-card--featured wow animated fadeInUp" data-wow-delay=".25s">
+    <div class="blog-card-body">
+      <span class="blog-platform blog-platform--featured">Deep Dive</span>
+      <h3>System Design: Data Replication</h3>
+      <p>Keeping multiple copies of data in sync across nodes — the Primary-Replica and Multi-Master models, synchronous / asynchronous / semi-synchronous and log-based strategies, and patterns like Event-Carried State Transfer, CDC, and CRDTs.</p>
+      <a class="blog-readmore" href="{{ '/blog/data-replication' | relative_url }}">Read article &rarr;</a>
+    </div>
+  </article>
+
+  <article class="blog-card wow animated fadeInUp" data-wow-delay=".3s">
     <div class="blog-card-body">
       <span class="blog-platform">Medium</span>
       <h3>Stop Burning Money: Turning Prometheus Metrics into a Resource Planning Strategy</h3>
@@ -38,7 +47,7 @@
     </div>
   </article>
 
-  <article class="blog-card wow animated fadeInUp" data-wow-delay=".3s">
+  <article class="blog-card wow animated fadeInUp" data-wow-delay=".35s">
     <div class="blog-card-body">
       <span class="blog-platform">Medium</span>
       <h3>De Ingress ao Gateway API: Automatizando TLS com Cert-Manager e Let's Encrypt</h3>

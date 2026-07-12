@@ -22,6 +22,8 @@ In a database context, each shard is a subset of the original base that can live
 
 The trade-off is real, though. Sharding introduces maintenance and rebalancing complexity, plus the ongoing challenge of keeping data consistent across partitions as scale increases.
 
+{% include elements/figure.html image="https://raw.githubusercontent.com/Zenardi/DescomplicandoSystemDesign/main/day-16/images/sharding-definicao.png" caption="Sharding splits one large dataset into smaller shards, each living on a different node." %}
+
 ### Sharding topologies
 
 There isn't just one way to shard. Different topologies suit different needs; thinking about the concept broadly, several distinct approaches exist to distribute load and gain performance and resilience.
@@ -64,6 +66,8 @@ Imagine a multi-tenant system with 300 customers spread across 10 partitions. In
 
 Because the distribution is defined by *mathematical operations on the key* — not by the real size or usage pattern of the data — this imbalance can appear naturally. Overloaded partitions cause slowness and, in extreme cases, failures, while underused ones waste resources. Mitigations include using more random partition keys, pre-partitioning based on known usage patterns, isolating specific sharding keys onto dedicated partitions, and applying intelligent caching to relieve the most-accessed partitions.
 
+{% include elements/figure.html image="https://raw.githubusercontent.com/Zenardi/DescomplicandoSystemDesign/main/day-16/images/sharding-hotpartition.png" caption="A hot partition: one shard absorbs a disproportionate share of the load while the others sit nearly idle." %}
+
 ---
 
 ## Sharding strategies
@@ -96,6 +100,8 @@ In hash-based sharding, you apply a hash function to the sharding key to decide 
 
 For example, if the hash is `15` and there are 3 shards, `15 % 3 = 0`, pointing to shard 0. If the hash is `10`, `10 % 3 = 1`, sending the record to shard 1.
 
+{% include elements/figure.html image="https://raw.githubusercontent.com/Zenardi/DescomplicandoSystemDesign/main/day-16/images/sharding-hash.png" caption="Hash-based sharding: a hash of the key, reduced modulo the shard count, decides the destination shard." %}
+
 Consider a multi-tenant system where the tenant identifier is the sharding key. To pick each customer's shard, you hash the identifier (say with SHA-256), turn the hash into an integer, and take the modulo by the number of shards; the remainder is the destination shard:
 
 ```go
@@ -118,6 +124,8 @@ This helps avoid hot partitions, since a good hash function tends to distribute 
 The scheme is simple, intuitive, and works well — **until the number of servers changes**. If a server fails or a new one is added, the keys must be redistributed, because the modulo result changes: `hash % 3` and `hash % 4` send the same key to different shards. In other words, whenever the server count varies, you lose the distribution references.
 
 For **stateless** resources like application servers, that redistribution is trivial. For state that's easily rebuilt, like caches, the impact is small. But for partitions holding *persistent* data, changing the server count becomes a serious problem — you can lose the routing to the original storage and generate immediate inconsistencies, forcing an expensive redistribution right after any horizontal scaling event. To mitigate this when nodes change often, you reach for **consistent hashing**.
+
+{% include elements/figure.html image="https://raw.githubusercontent.com/Zenardi/DescomplicandoSystemDesign/main/day-16/images/sharding-rehash.png" caption="The rehash problem: changing the server count changes every modulo result, so keys lose their mapping and must be redistributed." %}
 
 ### Choosing the hash algorithm
 
@@ -149,6 +157,8 @@ Run over a set of tenants, the resulting per-shard counts come out very close to
 Visually, consistent hashing is cyclic: the central structure is a ring, the **hash ring**. A key is allocated to a node by falling into an *interval* of values on the ring, not by an exact hash match. So when you change the number of nodes, results shift very little, cutting the redistribution needed.
 
 Back to the multi-tenant system: imagine a circle representing every possible hash value. Both the server nodes *and* the tenants are mapped onto points on that circle using the same function. A tenant's data lives on the first server found **clockwise** from the tenant's point; if the value passes the end, it "wraps around" back to marker 0 on the ring. When you add a new node, only the data *between it and the next node clockwise* needs to move; everything else stays put. When you remove a node, its data passes to the next node clockwise — minimal movement, preserved integrity.
+
+{% include elements/figure.html image="https://raw.githubusercontent.com/Zenardi/DescomplicandoSystemDesign/main/day-16/images/sharding-hash-ring.png" caption="The hash ring: nodes and keys map onto a circle, and each key belongs to the first node clockwise — so adding or removing a node moves only a small arc." %}
 
 A minimal ring, with binary search to find the owning node, looks like this:
 
@@ -197,6 +207,8 @@ Picture an architecture where the hash is computed only *at the moment a new sha
 The model works as a hybrid of replication and sharding. Each operation is routed to a **primary shard** (the golden source of that customer's data) and also written to one or more **secondary shards** chosen by the shuffling algorithm, which defines the customer's "virtual shuffle-shard." Consistency comes in two modes: **strong consistency**, where data is only confirmed after a successful write to *N* shards in the set, guaranteeing immediate durability; and **eventual consistency**, where the secondary replicas update asynchronously, favouring low latency and high throughput.
 
 The strategy balances resilience, logical isolation, and scalability. Because each customer writes to multiple shuffled shards, any failure is restricted to the shards *that customer uses*, not the entire cluster. When a shard fails, its fallbacks take over as primary, redirecting that partition's customers to a fallback shard with their complete (or nearly complete) data. Overall, the system tolerates more partial failures, because the redundancy between primaries and secondaries sustains reads and writes even during incidents.
+
+{% include elements/figure.html image="https://raw.githubusercontent.com/Zenardi/DescomplicandoSystemDesign/main/day-16/images/shuffle-sharding.png" caption="Shuffle sharding: each customer is assigned a shuffled subset of shards, so a failure is contained to that subset instead of the whole cluster." %}
 
 ---
 
