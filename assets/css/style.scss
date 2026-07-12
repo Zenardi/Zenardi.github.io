@@ -128,17 +128,13 @@ button:focus-visible,
   box-shadow: var(--shadow-sm);
 }
 .cz-flag { width: 20px; height: 20px; border-radius: 50%; flex: none; box-shadow: 0 0 0 1px var(--c-border); }
-.cz-badge {
-  font-family: var(--font-mono); font-size: 0.6rem; font-weight: 700; letter-spacing: 0.05em;
-  padding: 0.12rem 0.4rem; border-radius: 999px;
-  background: var(--c-accent); color: var(--c-on-accent); line-height: 1;
-}
+/* Inline icon (not a flex sibling) so it sits on the first line of the note
+   instead of floating vertically centred when the text wraps to two lines. */
 .cz-note {
-  display: flex; align-items: center; justify-content: center; gap: 0.45rem;
-  font-size: 0.85rem; color: var(--c-text-muted);
+  font-size: 0.85rem; color: var(--c-text-muted); text-align: center;
   max-width: 520px; margin: 0 auto 1.9rem; line-height: 1.5;
 }
-.cz-note i { color: var(--c-accent-str); }
+.cz-note i { color: var(--c-accent-str); margin-right: 0.45rem; vertical-align: -0.08em; }
 
 .hero-cta { display: flex; flex-wrap: wrap; gap: 0.6rem; justify-content: center; margin-bottom: 2.25rem; }
 
