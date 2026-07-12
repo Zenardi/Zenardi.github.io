@@ -1,11 +1,21 @@
 <!-- Local override of portfolYOU's _includes/projects/index.html.
-     Only change vs the theme: the Local Projects loop runs BEFORE the Remote
-     Projects loop, so local cards (e.g. Azure FinOps Optimizer) appear at the
-     top of the list instead of after every GitHub repo. -->
+     - Adds a page header (eyebrow + title + intro) matching the certifications page.
+     - Local Projects render first (they lead as featured cards).
+     - Layout is a token-based responsive grid (.projects-grid) matching the site's
+       blog/certifications/skills grids, replacing the theme's Bootstrap .card-columns. -->
 
-<div class="card-columns m-3 mt-5">
+<header class="projects-header wow animated fadeInUp" data-wow-delay=".05s">
+  <p class="section-eyebrow">Portfolio</p>
+  <h1 class="projects-title">Projects</h1>
+  <p class="projects-intro">
+    Hands-on platform, cloud, and DevOps work — featured builds alongside
+    {{ page.remote_projects.size }} open-source repositories on GitHub.
+  </p>
+</header>
 
-  <!-- Local Projects (rendered first so they sit at the top) -->
+<div class="projects-grid">
+
+  <!-- Local Projects (curated / featured, rendered first) -->
   {% for project in site.projects %}
 
     {%- assign project_type  = "local" -%}
@@ -27,7 +37,7 @@
 
   {% endfor %}
 
-  <!-- Remote Projects -->
+  <!-- Remote Projects (GitHub repositories) -->
   {% for remote_project in page.remote_projects %}
 
     {%- for repo in site.github.public_repositories -%}

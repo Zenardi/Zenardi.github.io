@@ -1,29 +1,42 @@
 <!-- Local override of portfolYOU's _includes/projects/project-card.html.
-     Two fixes over the theme version:
-       1. Image src runs through `relative_url` so local `image:` paths (e.g.
-          assets/img/...) resolve from the site root, not relative to /projects/
-          (the theme output a bare src that 404'd on the projects page).
-       2. GitHub icon renders for remote projects OR any project whose URL is a
-          github.com link, so local projects with a GitHub external_url match the
-          remote cards. -->
-<div class="wow animated fadeIn" data-wow-delay=".15s">
-  <a href="{{ project_url }}" class="project card text-themed" {%- if external and site.open_new_tab -%} target="_blank" rel="noopener" {%- endif -%}>
-    {%- if project_img -%}
-    <img id="{{ project_id }}-img" class="card-img-top" src="{{ project_img | relative_url }}" alt="{{ project_name }}" />
-    {%- endif -%}
-    <div class="card-body">
-      <h5 id="{{ project_id }}-name" class="card-title">
-        {%- if project_type == "remote" or project_url contains "github.com" -%}
-        <i class="fab fa-github" data-toggle="tooltip" data-placement="bottom" data-delay="250" title="GitHub Repository"></i> |&nbsp;
-        {%- endif -%}
-        {{ project_name }}
-      </h5>
-      <p id="{{ project_id }}-desc" class="card-text">{{ project_desc }}</p>
-      <p id="{{ project_id }}-tools" class="card-text">
-        {%- for tool in project_tools -%}
-        <span class="badge badge-pill text-primary border border-primary ml-1">{{ tool }}</span>
-        {%- endfor -%}
-      </p>
-    </div>
-  </a>
-</div>
+     Bespoke card matching the site's token-based card system (surface, border,
+     accent hover). Differences from the theme card:
+       - Whole card is one link; gradient GitHub/project icon badge; mono
+         "Repository"/"Featured" eyebrow; 4-line-clamped description; mono tag
+         pills; hover arrow affordance.
+       - Local (curated) projects render as "Featured".
+       - GitHub icon/label shows for remote projects OR any github.com URL. -->
+
+{%- assign is_github = false -%}
+{%- if project_type == "remote" or project_url contains "github.com" -%}
+  {%- assign is_github = true -%}
+{%- endif -%}
+
+<a id="{{ project_id }}" href="{{ project_url }}"
+   class="project-card{% if project_type == 'local' %} project-card--featured{% endif %} wow animated fadeInUp"
+   data-wow-delay=".1s"{% if external and site.open_new_tab %} target="_blank" rel="noopener"{% endif %}>
+
+  <div class="project-card-head">
+    <span class="project-icon" aria-hidden="true">
+      {%- if is_github -%}<i class="fab fa-github"></i>{%- else -%}<i class="fas fa-folder-open"></i>{%- endif -%}
+    </span>
+    <span class="project-kind">
+      {%- if project_type == "local" -%}Featured{%- elsif is_github -%}Repository{%- else -%}Project{%- endif -%}
+    </span>
+    <i class="project-ext fas fa-arrow-right" aria-hidden="true"></i>
+  </div>
+
+  <h3 class="project-title">{{ project_name }}</h3>
+
+  {%- if project_desc and project_desc != "" -%}
+  <p class="project-desc">{{ project_desc }}</p>
+  {%- endif -%}
+
+  {%- if project_tools.size > 0 -%}
+  <ul class="project-tags">
+    {%- for tool in project_tools -%}
+    <li>{{ tool }}</li>
+    {%- endfor -%}
+  </ul>
+  {%- endif -%}
+</a>
