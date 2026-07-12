@@ -60,6 +60,9 @@
         {%- assign project_desc  = project.description -%}
         {%- assign project_url   = project.html_url -%}
         {%- assign project_tools = project.topics -%}
+        {%- assign project_lang  = project.language -%}
+        {%- assign project_stars = project.stargazers_count -%}
+        {%- assign project_forks = project.forks_count -%}
         {%- assign external      = true -%}
 
         {% include projects/project-card.html %}

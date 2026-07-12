@@ -1,11 +1,10 @@
 <!-- Local override of portfolYOU's _includes/projects/project-card.html.
-     Bespoke card matching the site's token-based card system (surface, border,
-     accent hover). Differences from the theme card:
-       - Whole card is one link; gradient GitHub/project icon badge; mono
-         "Repository"/"Featured" eyebrow; 4-line-clamped description; mono tag
-         pills; hover arrow affordance.
-       - Local (curated) projects render as "Featured".
-       - GitHub icon/label shows for remote projects OR any github.com URL. -->
+     Bespoke card matching the site's token-based card system, enriched with:
+       - Gradient GitHub/project icon badge + "Repository"/"Featured" eyebrow.
+       - Title, 3-line-clamped description, up to 5 tag pills (+N overflow).
+       - GitHub metadata footer for remote repos: language (colored dot) + stars
+         + forks, driven by site.github data (github-language-color map below).
+       - Local (curated) projects render as a wider "Featured" card. -->
 
 {%- assign is_github = false -%}
 {%- if project_type == "remote" or project_url contains "github.com" -%}
@@ -21,7 +20,9 @@
       {%- if is_github -%}<i class="fab fa-github"></i>{%- else -%}<i class="fas fa-folder-open"></i>{%- endif -%}
     </span>
     <span class="project-kind">
-      {%- if project_type == "local" -%}Featured{%- elsif is_github -%}Repository{%- else -%}Project{%- endif -%}
+      {%- if project_type == "local" -%}<i class="fas fa-star" aria-hidden="true"></i> Featured
+      {%- elsif is_github -%}Repository
+      {%- else -%}Project{%- endif -%}
     </span>
     <i class="project-ext fas fa-arrow-right" aria-hidden="true"></i>
   </div>
@@ -34,9 +35,46 @@
 
   {%- if project_tools.size > 0 -%}
   <ul class="project-tags">
-    {%- for tool in project_tools -%}
-    <li>{{ tool }}</li>
-    {%- endfor -%}
+    {%- assign shown_tools = project_tools | slice: 0, 5 -%}
+    {%- for tool in shown_tools -%}<li>{{ tool }}</li>{%- endfor -%}
+    {%- if project_tools.size > 5 -%}<li class="project-tag-more">+{{ project_tools.size | minus: 5 }}</li>{%- endif -%}
   </ul>
+  {%- endif -%}
+
+  {%- if project_type == "remote" -%}
+    {%- assign has_meta = false -%}
+    {%- if project_lang and project_lang != "" -%}{%- assign has_meta = true -%}{%- endif -%}
+    {%- if project_stars > 0 -%}{%- assign has_meta = true -%}{%- endif -%}
+    {%- if project_forks > 0 -%}{%- assign has_meta = true -%}{%- endif -%}
+    {%- if has_meta -%}
+    {%- case project_lang -%}
+      {%- when "Python" -%}{%- assign lang_color = "#3572A5" -%}
+      {%- when "Go" -%}{%- assign lang_color = "#00ADD8" -%}
+      {%- when "JavaScript" -%}{%- assign lang_color = "#F1E05A" -%}
+      {%- when "TypeScript" -%}{%- assign lang_color = "#3178C6" -%}
+      {%- when "Shell" -%}{%- assign lang_color = "#89E051" -%}
+      {%- when "HCL" -%}{%- assign lang_color = "#844FBA" -%}
+      {%- when "Dockerfile" -%}{%- assign lang_color = "#384D54" -%}
+      {%- when "Ruby" -%}{%- assign lang_color = "#701516" -%}
+      {%- when "Rust" -%}{%- assign lang_color = "#DEA584" -%}
+      {%- when "Java" -%}{%- assign lang_color = "#B07219" -%}
+      {%- when "C++" -%}{%- assign lang_color = "#F34B7D" -%}
+      {%- when "C" -%}{%- assign lang_color = "#555555" -%}
+      {%- when "HTML" -%}{%- assign lang_color = "#E34C26" -%}
+      {%- when "CSS" -%}{%- assign lang_color = "#563D7C" -%}
+      {%- when "Jupyter Notebook" -%}{%- assign lang_color = "#DA5B0B" -%}
+      {%- when "Makefile" -%}{%- assign lang_color = "#427819" -%}
+      {%- when "Smarty" -%}{%- assign lang_color = "#F0C040" -%}
+      {%- when "Mustache" -%}{%- assign lang_color = "#724B3B" -%}
+      {%- else -%}{%- assign lang_color = "#8B98A9" -%}
+    {%- endcase -%}
+    <div class="project-meta">
+      {%- if project_lang and project_lang != "" -%}
+      <span class="project-lang"><span class="project-lang-dot" style="background: {{ lang_color }};"></span>{{ project_lang }}</span>
+      {%- endif -%}
+      {%- if project_stars > 0 -%}<span class="project-stat"><i class="fas fa-star" aria-hidden="true"></i> {{ project_stars }}</span>{%- endif -%}
+      {%- if project_forks > 0 -%}<span class="project-stat"><i class="fas fa-code-branch" aria-hidden="true"></i> {{ project_forks }}</span>{%- endif -%}
+    </div>
+    {%- endif -%}
   {%- endif -%}
 </a>
