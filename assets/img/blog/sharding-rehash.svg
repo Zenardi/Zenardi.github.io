@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 360" font-family="system-ui,-apple-system,sans-serif">
+<rect x="1" y="1" width="758" height="358" rx="14" fill="#ffffff" stroke="#e2e8f0" stroke-width="2"/>
+<text x="36" y="46" font-size="21" font-weight="700" fill="#0f172a">The rehash problem</text>
+<text x="36" y="70" font-size="13.5" fill="#64748b">Change the node count and every modulo result changes &#8212; keys must move</text>
+<g font-size="13" text-anchor="middle">
+<text x="130" y="112" font-weight="600" fill="#0f172a">key</text>
+<text x="130" y="150" fill="#334155">hash = 10</text>
+<text x="130" y="188" fill="#334155">hash = 22</text>
+<text x="130" y="226" fill="#334155">hash = 37</text>
+<rect x="250" y="92" width="200" height="150" rx="10" fill="#f8fafc" stroke="#cbd5e1" stroke-width="2"/>
+<text x="350" y="86" font-weight="700" fill="#0369a1">3 shards (% 3)</text>
+<text x="350" y="150" fill="#0f172a">10 % 3 = <tspan font-weight="700" fill="#0369a1">1</tspan></text>
+<text x="350" y="188" fill="#0f172a">22 % 3 = <tspan font-weight="700" fill="#0369a1">1</tspan></text>
+<text x="350" y="226" fill="#0f172a">37 % 3 = <tspan font-weight="700" fill="#0369a1">1</tspan></text>
+<rect x="520" y="92" width="200" height="150" rx="10" fill="#fef2f2" stroke="#fca5a5" stroke-width="2"/>
+<text x="620" y="86" font-weight="700" fill="#dc2626">4 shards (% 4)</text>
+<text x="620" y="150" fill="#0f172a">10 % 4 = <tspan font-weight="700" fill="#dc2626">2</tspan></text>
+<text x="620" y="188" fill="#0f172a">22 % 4 = <tspan font-weight="700" fill="#dc2626">2</tspan></text>
+<text x="620" y="226" fill="#0f172a">37 % 4 = <tspan font-weight="700" fill="#dc2626">1</tspan></text>
+</g>
+<text x="485" y="300" text-anchor="middle" font-size="12.5" fill="#dc2626" font-weight="600">adding one node re-maps almost every key</text>
+</svg>

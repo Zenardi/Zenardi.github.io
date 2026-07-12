@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 360" font-family="system-ui,-apple-system,sans-serif">
+<rect x="1" y="1" width="758" height="358" rx="14" fill="#ffffff" stroke="#e2e8f0" stroke-width="2"/>
+<defs><marker id="a" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L9,3 L0,6 Z" fill="#0369a1"/></marker></defs>
+<text x="36" y="46" font-size="21" font-weight="700" fill="#0f172a">Sharding</text>
+<text x="36" y="70" font-size="13.5" fill="#64748b">Split one large dataset into smaller shards, each on a different node</text>
+<g text-anchor="middle">
+<rect x="50" y="120" width="150" height="150" rx="12" fill="#eff6ff" stroke="#0369a1" stroke-width="2"/>
+<text x="125" y="150" font-size="15" font-weight="600" fill="#0f172a">Full dataset</text>
+<text x="125" y="205" font-size="34" font-weight="700" fill="#0369a1">DB</text>
+<rect x="560" y="96" width="160" height="56" rx="10" fill="#f1f5f9" stroke="#0369a1" stroke-width="2"/>
+<text x="640" y="124" font-size="14" font-weight="600" fill="#0f172a">Shard 1 &#183; Node A</text>
+<rect x="560" y="167" width="160" height="56" rx="10" fill="#f1f5f9" stroke="#0369a1" stroke-width="2"/>
+<text x="640" y="195" font-size="14" font-weight="600" fill="#0f172a">Shard 2 &#183; Node B</text>
+<rect x="560" y="238" width="160" height="56" rx="10" fill="#f1f5f9" stroke="#0369a1" stroke-width="2"/>
+<text x="640" y="266" font-size="14" font-weight="600" fill="#0f172a">Shard 3 &#183; Node C</text>
+</g>
+<g stroke="#0369a1" stroke-width="2" fill="none" marker-end="url(#a)">
+<path d="M202 195 C 380 150, 400 128, 556 124"/>
+<path d="M202 195 H 556"/>
+<path d="M202 195 C 380 240, 400 262, 556 266"/>
+</g>
+<text x="380" y="150" text-anchor="middle" font-size="12" fill="#475569" font-weight="600">partition</text>
+</svg>

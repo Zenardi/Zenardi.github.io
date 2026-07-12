@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 360" font-family="system-ui,-apple-system,sans-serif">
+<rect x="1" y="1" width="758" height="358" rx="14" fill="#ffffff" stroke="#e2e8f0" stroke-width="2"/>
+<text x="36" y="46" font-size="21" font-weight="700" fill="#0f172a">Percentiles reveal the tail</text>
+<text x="36" y="70" font-size="13.5" fill="#64748b">A 200 ms average can hide a 700 ms p95 and a 1,000 ms p99</text>
+<line x1="80" y1="300" x2="720" y2="300" stroke="#cbd5e1" stroke-width="2"/>
+<line x1="80" y1="300" x2="80" y2="110" stroke="#cbd5e1" stroke-width="2"/>
+<text x="700" y="322" font-size="11.5" fill="#94a3b8" text-anchor="end">response time (ms)</text>
+<path d="M80 300 C 150 300, 175 130, 220 130 C 280 130, 300 300, 420 300 C 560 300, 600 300, 720 300 Z" fill="#dbeafe" stroke="#0369a1" stroke-width="2.5"/>
+<g stroke-width="2" stroke-dasharray="5 4">
+<line x1="215" y1="300" x2="215" y2="120" stroke="#64748b"/>
+<line x1="470" y1="300" x2="470" y2="150" stroke="#f59e0b"/>
+<line x1="600" y1="300" x2="600" y2="150" stroke="#dc2626"/>
+</g>
+<g text-anchor="middle" font-size="12.5" font-weight="600">
+<text x="215" y="112" fill="#64748b">avg 200 ms</text>
+<text x="470" y="142" fill="#b45309">p95 700 ms</text>
+<text x="600" y="142" fill="#dc2626">p99 1000 ms</text>
+</g>
+<text x="470" y="285" text-anchor="middle" font-size="12" fill="#475569">the slow tail</text>
+</svg>

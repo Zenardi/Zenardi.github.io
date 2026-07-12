@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 360" font-family="system-ui,-apple-system,sans-serif">
+<rect x="1" y="1" width="758" height="358" rx="14" fill="#ffffff" stroke="#e2e8f0" stroke-width="2"/>
+<text x="36" y="46" font-size="21" font-weight="700" fill="#0f172a">The Four Golden Signals</text>
+<text x="36" y="70" font-size="13.5" fill="#64748b">The core signals for a distributed system&#8217;s health</text>
+<g>
+<rect x="60" y="100" width="310" height="105" rx="12" fill="#eff6ff" stroke="#0369a1" stroke-width="2"/>
+<text x="82" y="140" font-size="16" font-weight="700" fill="#0f172a">Saturation</text>
+<text x="82" y="166" font-size="12.5" fill="#475569">how full a resource is</text>
+<text x="82" y="186" font-size="12.5" fill="#475569">(CPU, memory, disk, pool)</text>
+<rect x="390" y="100" width="310" height="105" rx="12" fill="#eff6ff" stroke="#0369a1" stroke-width="2"/>
+<text x="412" y="140" font-size="16" font-weight="700" fill="#0f172a">Traffic</text>
+<text x="412" y="166" font-size="12.5" fill="#475569">throughput &#8212; requests or</text>
+<text x="412" y="186" font-size="12.5" fill="#475569">transactions per unit time</text>
+<rect x="60" y="220" width="310" height="105" rx="12" fill="#eff6ff" stroke="#0369a1" stroke-width="2"/>
+<text x="82" y="260" font-size="16" font-weight="700" fill="#0f172a">Response time</text>
+<text x="82" y="286" font-size="12.5" fill="#475569">latency + processing time</text>
+<text x="82" y="306" font-size="12.5" fill="#475569">per request</text>
+<rect x="390" y="220" width="310" height="105" rx="12" fill="#eff6ff" stroke="#0369a1" stroke-width="2"/>
+<text x="412" y="260" font-size="16" font-weight="700" fill="#0f172a">Error rate</text>
+<text x="412" y="286" font-size="12.5" fill="#475569">share of failed requests</text>
+<text x="412" y="306" font-size="12.5" fill="#475569">out of the total</text>
+</g>
+</svg>

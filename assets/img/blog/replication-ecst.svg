@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 380" font-family="system-ui,-apple-system,sans-serif">
+<rect x="1" y="1" width="758" height="378" rx="14" fill="#ffffff" stroke="#e2e8f0" stroke-width="2"/>
+<defs><marker id="a" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L9,3 L0,6 Z" fill="#0369a1"/></marker></defs>
+<text x="36" y="46" font-size="21" font-weight="700" fill="#0f172a">Event-Carried State Transfer</text>
+<text x="36" y="70" font-size="13.5" fill="#64748b">Domain changes publish events; each service updates its own local copy</text>
+<g text-anchor="middle">
+<rect x="40" y="150" width="140" height="66" rx="12" fill="#eff6ff" stroke="#0369a1" stroke-width="2"/>
+<text x="110" y="178" font-size="14.5" font-weight="600" fill="#0f172a">Source domain</text>
+<text x="110" y="198" font-size="11.5" fill="#0369a1">entity updated</text>
+<rect x="260" y="150" width="150" height="66" rx="12" fill="#fff7ed" stroke="#f59e0b" stroke-width="2"/>
+<text x="335" y="178" font-size="14.5" font-weight="600" fill="#0f172a">Event topic</text>
+<text x="335" y="198" font-size="11.5" fill="#b45309">publishes change</text>
+<rect x="500" y="70" width="220" height="66" rx="12" fill="#f1f5f9" stroke="#0369a1" stroke-width="2"/>
+<text x="588" y="98" font-size="14" font-weight="600" fill="#0f172a">Service A</text><text x="588" y="117" font-size="11" fill="#64748b">local store</text>
+<rect x="500" y="150" width="220" height="66" rx="12" fill="#f1f5f9" stroke="#0369a1" stroke-width="2"/>
+<text x="588" y="178" font-size="14" font-weight="600" fill="#0f172a">Service B</text><text x="588" y="197" font-size="11" fill="#64748b">local store</text>
+<rect x="500" y="230" width="220" height="66" rx="12" fill="#f1f5f9" stroke="#0369a1" stroke-width="2"/>
+<text x="588" y="258" font-size="14" font-weight="600" fill="#0f172a">Service C</text><text x="588" y="277" font-size="11" fill="#64748b">local store</text>
+<circle cx="680" cy="103" r="12" fill="#e0f2fe" stroke="#0369a1" stroke-width="1.5"/>
+<circle cx="680" cy="183" r="12" fill="#e0f2fe" stroke="#0369a1" stroke-width="1.5"/>
+<circle cx="680" cy="263" r="12" fill="#e0f2fe" stroke="#0369a1" stroke-width="1.5"/>
+</g>
+<line x1="182" y1="183" x2="256" y2="183" stroke="#0369a1" stroke-width="2" marker-end="url(#a)"/>
+<g stroke="#f59e0b" stroke-width="2" fill="none" marker-end="url(#a)">
+<path d="M412 172 C 450 140, 460 110, 496 103"/>
+<path d="M412 183 H 496"/>
+<path d="M412 194 C 450 226, 460 256, 496 263"/>
+</g>
+</svg>

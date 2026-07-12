@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 380" font-family="system-ui,-apple-system,sans-serif">
+<rect x="1" y="1" width="758" height="378" rx="14" fill="#ffffff" stroke="#e2e8f0" stroke-width="2"/>
+<defs><marker id="a" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L9,3 L0,6 Z" fill="#0369a1"/></marker></defs>
+<text x="36" y="46" font-size="21" font-weight="700" fill="#0f172a">Change Data Capture (CDC)</text>
+<text x="36" y="70" font-size="13.5" fill="#64748b">Capture inserts, updates, deletes at the source; stream them to consumers</text>
+<g text-anchor="middle">
+<path d="M50 150 a55 14 0 0 1 110 0 v54 a55 14 0 0 1 -110 0 Z" fill="#eff6ff" stroke="#0369a1" stroke-width="2"/>
+<path d="M50 150 a55 14 0 0 0 110 0" fill="none" stroke="#0369a1" stroke-width="2"/>
+<text x="105" y="200" font-size="14" font-weight="600" fill="#0f172a">Source DB</text>
+<rect x="250" y="146" width="160" height="66" rx="12" fill="#fff7ed" stroke="#f59e0b" stroke-width="2"/>
+<text x="330" y="172" font-size="14.5" font-weight="600" fill="#0f172a">CDC</text>
+<text x="330" y="192" font-size="11" fill="#b45309">INSERT &#183; UPDATE &#183; DELETE</text>
+<rect x="560" y="74" width="160" height="52" rx="10" fill="#f1f5f9" stroke="#0369a1" stroke-width="2"/><text x="640" y="105" font-size="14" font-weight="600" fill="#0f172a">Message queue</text>
+<rect x="560" y="154" width="160" height="52" rx="10" fill="#f1f5f9" stroke="#0369a1" stroke-width="2"/><text x="640" y="185" font-size="14" font-weight="600" fill="#0f172a">Cache</text>
+<rect x="560" y="234" width="160" height="52" rx="10" fill="#f1f5f9" stroke="#0369a1" stroke-width="2"/><text x="640" y="265" font-size="14" font-weight="600" fill="#0f172a">Data lake</text>
+</g>
+<line x1="162" y1="178" x2="246" y2="178" stroke="#0369a1" stroke-width="2" marker-end="url(#a)"/>
+<text x="204" y="170" text-anchor="middle" font-size="11" fill="#475569">watch</text>
+<g stroke="#f59e0b" stroke-width="2" fill="none" marker-end="url(#a)">
+<path d="M412 168 C 470 140, 490 108, 556 100"/>
+<path d="M412 179 H 556"/>
+<path d="M412 190 C 470 232, 490 252, 556 260"/>
+</g>
+<text x="486" y="330" text-anchor="middle" font-size="12" fill="#64748b">real-time stream &#183; no polling the source</text>
+</svg>

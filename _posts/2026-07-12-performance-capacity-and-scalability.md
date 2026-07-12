@@ -22,7 +22,7 @@ To understand how a system behaves under different conditions — load spikes, c
 
 Some metrics are practically universal; others emerge from specific business needs. This post focuses on the universal baseline: the **Four Golden Signals**, popularised by Google in the [Site Reliability Engineering book](https://sre.google/sre-book/table-of-contents/). Those four signals — **saturation**, **traffic**, **response time**, and **error rate** — are the core of understanding a distributed system's health. Here we look at them through a *performance* lens rather than an observability one.
 
-{% include elements/figure.html image="https://raw.githubusercontent.com/Zenardi/DescomplicandoSystemDesign/main/day-14/images/performance-metricas.png" caption="The core performance signals — saturation, traffic, response time, and error rate — read together tell the health story." %}
+{% include elements/figure.html image="/assets/img/blog/performance-golden-signals.svg" caption="The core performance signals — saturation, traffic, response time, and error rate — read together tell the health story." %}
 
 #### Utilisation and saturation
 
@@ -72,7 +72,7 @@ A percentile is the value below which a given share of the data falls. A **p90**
 
 Consider a scenario where the average response is 200 ms — seemingly excellent. Look at the percentiles, though, and the p95 is 700 ms while the p99 reaches 1,000 ms. So although most requests are fast, a meaningful slice of responses is far slower than the average suggests. Evaluating those outliers is essential for planning capacity and finding bottlenecks — which is exactly why *"averages hide, percentiles reveal"* is a monitoring mantra.
 
-{% include elements/figure.html image="https://raw.githubusercontent.com/Zenardi/DescomplicandoSystemDesign/main/day-14/images/Percentis.png" caption="Percentiles expose the tail: a healthy-looking 200 ms average can hide a 700 ms p95 and a 1,000 ms p99." %}
+{% include elements/figure.html image="/assets/img/blog/performance-percentiles.svg" caption="Percentiles expose the tail: a healthy-looking 200 ms average can hide a 700 ms p95 and a 1,000 ms p99." %}
 
 ---
 
@@ -96,7 +96,7 @@ In software, backpressure happens when a component receives more data or request
 
 At 100 TPS, though, service B — capped at 60 — accumulates 40 transactions per second of backlog. Push it harder, to 120 TPS injected, and the end-to-end bottleneck settles at 60 TPS: **50% degradation** between input and output. The most performant component in the flow (C, at 300 TPS) sits permanently idle, held back by what comes before it. As the maxim goes, *"a chain is only as strong as its weakest link"* — a system's throughput and capacity are always constrained by its most degraded component.
 
-{% include elements/figure.html image="https://raw.githubusercontent.com/Zenardi/DescomplicandoSystemDesign/main/day-14/images/Scale-Backpressure%20-%20Danger.drawio.png" caption="Backpressure: service B (60 TPS) can't keep up with 120 TPS injected, so it backs up and caps end-to-end throughput while C sits idle." %}
+{% include elements/figure.html image="/assets/img/blog/performance-backpressure.svg" caption="Backpressure: service B (60 TPS) can't keep up with 120 TPS injected, so it backs up and caps end-to-end throughput while C sits idle." %}
 
 ### Cost per transaction
 
@@ -124,11 +124,11 @@ There are two broad types of scaling. To illustrate them, imagine a bus company 
 
 **Vertical scalability** would swap part of the fleet for **double-decker buses**, doubling each vehicle's capacity. That's the parallel: increase (or reduce) the capacity of a *single component* by adding or removing resources from it. In practice, vertical scaling means adjusting CPU, RAM, disk, or network on a single resource — and it can include algorithm optimisations to improve I/O. It's the simpler approach, but it runs into **physical and cost limits**. The focus of vertical design is **maximising the throughput and efficiency of one server or resource**. The matching operations are **scale-up** (add CPU/RAM/storage to a server) and **scale-down** (remove them when no longer needed).
 
-{% include elements/figure.html image="https://raw.githubusercontent.com/Zenardi/DescomplicandoSystemDesign/main/day-14/images/onibus-vertical.png" caption="Vertical scaling: a double-decker bus — the same single unit, upgraded to hold more (scale-up / scale-down)." %}
+{% include elements/figure.html image="/assets/img/blog/performance-vertical.svg" caption="Vertical scaling (scale-up / scale-down): grow a single node by adding CPU, RAM, and disk." %}
 
 **Horizontal scalability** would instead buy **more units of the same bus**, rather than replacing the fleet. More vehicles on the route distribute passengers among themselves — exactly how horizontal scaling works: **add or remove compute units** (servers, containers, replicas). When a single-node web app starts receiving heavy traffic, you add replicas to split the load, usually behind a **load balancer**. When that capacity is automated, it's called **elasticity**. For it to work well, the system needs a **distributed architecture** that can process requests with external parallelism. The matching operations are **scale-out** (add servers/replicas performing the same function) and **scale-in** (remove them) — combined to **dynamically adjust** capacity as demand oscillates.
 
-{% include elements/figure.html image="https://raw.githubusercontent.com/Zenardi/DescomplicandoSystemDesign/main/day-14/images/onibus-horizontal.png" caption="Horizontal scaling: more buses of the same kind on the route, sharing the passengers (scale-out / scale-in)." %}
+{% include elements/figure.html image="/assets/img/blog/performance-horizontal.svg" caption="Horizontal scaling (scale-out / scale-in): add more identical nodes behind a load balancer to share the load." %}
 
 ---
 

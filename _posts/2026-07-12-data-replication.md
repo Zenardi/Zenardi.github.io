@@ -36,7 +36,7 @@ Here, **multiple nodes act as primaries simultaneously**, accepting both reads a
 
 The advantage is eliminating the Primary-Replica single point of failure and gaining flexibility in load distribution. In exchange comes significant extra complexity: **resolving write conflicts**. When two nodes accept concurrent writes to the same datum, the system needs a tie-breaking strategy — ordering operations by timestamp, or applying specific resolution policies — especially during the temporary partitioning caused by network failures.
 
-{% include elements/figure.html image="https://raw.githubusercontent.com/Zenardi/DescomplicandoSystemDesign/main/day-17/images/replicacao-multi-primary.png" caption="Multi-Master (Primary-Primary): every node accepts reads and writes, replicating changes to the others." %}
+{% include elements/figure.html image="/assets/img/blog/replication-multi-master.svg" caption="Multi-Master (Primary-Primary): every node accepts reads and writes, replicating changes to the others." %}
 
 ---
 
@@ -56,7 +56,7 @@ In synchronous replication, a write is only considered complete **after every no
 
 In practice, the client sends the datum to the cluster's primary endpoint, which distributes it to all nodes; the operation only returns success when they all answer "ok." A classic technique to implement this is **two-phase commit**. The payoff is obvious in domains where divergence is unacceptable, such as payments and financial systems. The cost is **higher latency**, made worse when nodes are numerous or geographically distant.
 
-{% include elements/figure.html image="https://raw.githubusercontent.com/Zenardi/DescomplicandoSystemDesign/main/day-17/images/replicacao-sincrona.png" caption="Synchronous replication: the write is confirmed only after every node acknowledges it — strong consistency, higher latency." %}
+{% include elements/figure.html image="/assets/img/blog/replication-synchronous.svg" caption="Synchronous replication: the write is confirmed only after every node acknowledges it — strong consistency, higher latency." %}
 
 ### Asynchronous replication
 
@@ -64,7 +64,7 @@ Here a write is sent to one node and propagated to the others **eventually**, le
 
 The price is **eventual consistency**: queries issued right after a write may return different versions of the datum until replication completes. That's why the model is widely adopted where availability and performance matter more than immediate consistency — social networks, CDN assets, cache clusters, and less-critical data used to offload the origin.
 
-{% include elements/figure.html image="https://raw.githubusercontent.com/Zenardi/DescomplicandoSystemDesign/main/day-17/images/replicacao-assincrona.png" caption="Asynchronous replication: the write is acknowledged immediately and propagated to replicas eventually — fast writes, eventual consistency." %}
+{% include elements/figure.html image="/assets/img/blog/replication-asynchronous.svg" caption="Asynchronous replication: the write is acknowledged immediately and propagated to replicas eventually — fast writes, eventual consistency." %}
 
 ### Semi-synchronous replication
 
@@ -72,7 +72,7 @@ This model is a middle ground: it requires **at least one replica (or a small su
 
 The result is a **balance between consistency and performance**, with an extra layer of resilience: you get synchronous durability on at least one node without paying the latency of confirming all of them. Databases like **MySQL** and **MariaDB** follow this logic, acknowledging the write as soon as a secondary has stored it, while other nodes catch up later.
 
-{% include elements/figure.html image="https://raw.githubusercontent.com/Zenardi/DescomplicandoSystemDesign/main/day-17/images/replicacao-semi-sincrona.png" caption="Semi-synchronous replication: at least one replica confirms before success; the remaining nodes catch up asynchronously." %}
+{% include elements/figure.html image="/assets/img/blog/replication-semi-synchronous.svg" caption="Semi-synchronous replication: at least one replica confirms before success; the remaining nodes catch up asynchronously." %}
 
 ### Log-based replication
 
@@ -82,7 +82,7 @@ It's advantageous when there are more writes than reads, or when volume is very 
 
 The same idea underpins foundational distributed-systems algorithms — **Paxos** (BigTable, Apache Mesos), **Raft** (etcd, ScyllaDB, Consul, CockroachDB), and **Viewstamped Replication** (TigerBeetle) — plus techniques like the **write-ahead log (WAL)**, which ensures durability during replication even in the face of node failures.
 
-{% include elements/figure.html image="https://raw.githubusercontent.com/Zenardi/DescomplicandoSystemDesign/main/day-17/images/replicacao-logs.png" caption="Log-based replication: operations are appended to a sequential log and replayed on every replica." %}
+{% include elements/figure.html image="/assets/img/blog/replication-log-based.svg" caption="Log-based replication: operations are appended to a sequential log and replayed on every replica." %}
 
 ---
 
@@ -98,7 +98,7 @@ The core idea: whenever an entity in a domain is updated, the change is publishe
 
 A good example is a government system sharing citizen data across banking, tax, security, traffic, and social agencies. When marital status, income, address, or phone changes in a central registry, an event notifies each system, which then updates its own base.
 
-{% include elements/figure.html image="https://raw.githubusercontent.com/Zenardi/DescomplicandoSystemDesign/main/day-17/images/state-transfer.drawio.png" caption="Event-Carried State Transfer: domain changes are published as events, and each dependent service updates its own local copy." %}
+{% include elements/figure.html image="/assets/img/blog/replication-ecst.svg" caption="Event-Carried State Transfer: domain changes are published as events, and each dependent service updates its own local copy." %}
 
 ### Change Data Capture (CDC)
 
@@ -108,7 +108,7 @@ The mechanism monitors inserts, updates, and deletes, capturing them as they hap
 
 CDC serves as the foundation for other strategies, including Event-Carried State Transfer itself, which uses these events to replicate data proactively. It also enables streaming to data lakes, proactive caching, and CQRS — acting as a reactive bridge between the source and the other integration patterns.
 
-{% include elements/figure.html image="https://raw.githubusercontent.com/Zenardi/DescomplicandoSystemDesign/main/day-17/images/cdc.drawio.png" caption="Change Data Capture: inserts, updates, and deletes are captured at the source and streamed to dependent systems in real time." %}
+{% include elements/figure.html image="/assets/img/blog/replication-cdc.svg" caption="Change Data Capture: inserts, updates, and deletes are captured at the source and streamed to dependent systems in real time." %}
 
 ### CRDTs — Conflict-Free Replicated Data Types
 

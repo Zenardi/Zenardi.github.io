@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 340" font-family="system-ui,-apple-system,sans-serif">
+<rect x="1" y="1" width="758" height="338" rx="14" fill="#ffffff" stroke="#e2e8f0" stroke-width="2"/>
+<defs><marker id="a" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L9,3 L0,6 Z" fill="#0369a1"/></marker></defs>
+<text x="36" y="46" font-size="21" font-weight="700" fill="#0f172a">Vertical scaling (scale-up / scale-down)</text>
+<text x="36" y="70" font-size="13.5" fill="#64748b">Grow a single node by adding CPU, RAM, and disk</text>
+<g text-anchor="middle">
+<rect x="110" y="200" width="120" height="90" rx="12" fill="#eff6ff" stroke="#0369a1" stroke-width="2"/>
+<text x="170" y="235" font-size="14" font-weight="600" fill="#0f172a">1 node</text>
+<text x="170" y="258" font-size="11.5" fill="#0369a1">2 CPU &#183; 4GB</text>
+<rect x="500" y="110" width="170" height="180" rx="12" fill="#dbeafe" stroke="#0369a1" stroke-width="2.5"/>
+<text x="585" y="150" font-size="15" font-weight="700" fill="#0f172a">same node</text>
+<text x="585" y="176" font-size="12.5" fill="#0369a1">8 CPU &#183; 32GB</text>
+<text x="585" y="196" font-size="12.5" fill="#0369a1">faster disk</text>
+</g>
+<line x1="240" y1="245" x2="492" y2="215" stroke="#0369a1" stroke-width="2" marker-end="url(#a)"/>
+<text x="366" y="212" text-anchor="middle" font-size="12.5" font-weight="600" fill="#0f172a">+ CPU  + RAM  + disk</text>
+<text x="366" y="300" text-anchor="middle" font-size="11.5" fill="#64748b">simpler, but bounded by physical and cost limits</text>
+</svg>

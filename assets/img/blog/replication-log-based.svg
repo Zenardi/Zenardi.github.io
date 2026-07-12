@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 380" font-family="system-ui,-apple-system,sans-serif">
+<rect x="1" y="1" width="758" height="378" rx="14" fill="#ffffff" stroke="#e2e8f0" stroke-width="2"/>
+<defs><marker id="a" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L9,3 L0,6 Z" fill="#0369a1"/></marker></defs>
+<text x="36" y="46" font-size="21" font-weight="700" fill="#0f172a">Log-based replication</text>
+<text x="36" y="70" font-size="13.5" fill="#64748b">Append operations to an ordered log and replay them on every replica</text>
+<g text-anchor="middle">
+<rect x="40" y="150" width="120" height="66" rx="12" fill="#eff6ff" stroke="#0369a1" stroke-width="2"/>
+<text x="100" y="180" font-size="15" font-weight="600" fill="#0f172a">Primary</text>
+<text x="100" y="200" font-size="11.5" fill="#0369a1">appends ops</text>
+<rect x="250" y="152" width="270" height="62" rx="10" fill="#f8fafc" stroke="#94a3b8" stroke-width="2"/>
+<text x="385" y="140" font-size="12.5" fill="#64748b">ordered log</text>
+</g>
+<g text-anchor="middle" font-size="13" font-weight="600" fill="#0f172a">
+<rect x="262" y="164" width="54" height="38" rx="7" fill="#eff6ff" stroke="#0369a1" stroke-width="1.5"/><text x="289" y="188">op1</text>
+<rect x="322" y="164" width="54" height="38" rx="7" fill="#eff6ff" stroke="#0369a1" stroke-width="1.5"/><text x="349" y="188">op2</text>
+<rect x="382" y="164" width="54" height="38" rx="7" fill="#eff6ff" stroke="#0369a1" stroke-width="1.5"/><text x="409" y="188">op3</text>
+<rect x="442" y="164" width="66" height="38" rx="7" fill="#f1f5f9" stroke="#94a3b8" stroke-width="1.5"/><text x="475" y="188" fill="#64748b">op4&#8230;</text>
+</g>
+<line x1="162" y1="183" x2="246" y2="183" stroke="#0369a1" stroke-width="2" marker-end="url(#a)"/>
+<g text-anchor="middle">
+<rect x="600" y="96" width="130" height="54" rx="10" fill="#eff6ff" stroke="#0369a1" stroke-width="2"/>
+<text x="665" y="122" font-size="14" font-weight="600" fill="#0f172a">Replica 1</text><text x="665" y="139" font-size="11" fill="#0369a1">replays log</text>
+<rect x="600" y="216" width="130" height="54" rx="10" fill="#eff6ff" stroke="#0369a1" stroke-width="2"/>
+<text x="665" y="242" font-size="14" font-weight="600" fill="#0f172a">Replica 2</text><text x="665" y="259" font-size="11" fill="#0369a1">replays log</text>
+</g>
+<g stroke="#0369a1" stroke-width="2" fill="none" marker-end="url(#a)">
+<path d="M520 172 C 560 150, 560 140, 596 126"/>
+<path d="M520 196 C 560 220, 560 230, 596 240"/>
+</g>
+<text x="560" y="300" text-anchor="middle" font-size="12" fill="#64748b">ship log &#183; only changes travel between nodes</text>
+</svg>

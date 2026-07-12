@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 360" font-family="system-ui,-apple-system,sans-serif">
+<rect x="1" y="1" width="758" height="358" rx="14" fill="#ffffff" stroke="#e2e8f0" stroke-width="2"/>
+<defs><marker id="a" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L9,3 L0,6 Z" fill="#0369a1"/></marker></defs>
+<text x="36" y="46" font-size="21" font-weight="700" fill="#0f172a">Backpressure</text>
+<text x="36" y="70" font-size="13.5" fill="#64748b">The slowest component caps end-to-end throughput</text>
+<g text-anchor="middle">
+<rect x="150" y="150" width="110" height="70" rx="12" fill="#eff6ff" stroke="#0369a1" stroke-width="2"/><text x="205" y="180" font-size="15" font-weight="700" fill="#0f172a">A</text><text x="205" y="202" font-size="12" fill="#0369a1">100 TPS</text>
+<rect x="325" y="150" width="110" height="70" rx="12" fill="#fee2e2" stroke="#dc2626" stroke-width="2.5"/><text x="380" y="180" font-size="15" font-weight="700" fill="#0f172a">B</text><text x="380" y="202" font-size="12" fill="#dc2626" font-weight="600">60 TPS</text>
+<rect x="500" y="150" width="110" height="70" rx="12" fill="#f1f5f9" stroke="#94a3b8" stroke-width="2"/><text x="555" y="180" font-size="15" font-weight="700" fill="#0f172a">C</text><text x="555" y="202" font-size="12" fill="#64748b">300 TPS (idle)</text>
+<text x="380" y="132" font-size="12" fill="#dc2626" font-weight="700">bottleneck</text>
+</g>
+<line x1="60" y1="185" x2="146" y2="185" stroke="#0369a1" stroke-width="2" marker-end="url(#a)"/>
+<text x="103" y="176" text-anchor="middle" font-size="12" font-weight="600" fill="#0f172a">120 TPS in</text>
+<line x1="260" y1="185" x2="321" y2="185" stroke="#0369a1" stroke-width="2" marker-end="url(#a)"/>
+<line x1="435" y1="185" x2="496" y2="185" stroke="#dc2626" stroke-width="2" marker-end="url(#a)"/>
+<line x1="610" y1="185" x2="700" y2="185" stroke="#94a3b8" stroke-width="2" marker-end="url(#a)"/>
+<text x="668" y="176" text-anchor="middle" font-size="12" font-weight="600" fill="#334155">60 TPS out</text>
+<g fill="#fca5a5"><rect x="332" y="250" width="14" height="18" rx="2"/><rect x="350" y="250" width="14" height="18" rx="2"/><rect x="368" y="250" width="14" height="18" rx="2"/><rect x="386" y="250" width="14" height="18" rx="2"/><rect x="404" y="250" width="14" height="18" rx="2"/></g>
+<text x="380" y="290" text-anchor="middle" font-size="12" fill="#dc2626">40 TPS backlog builds up at B</text>
+</svg>

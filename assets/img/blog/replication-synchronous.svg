@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 380" font-family="system-ui,-apple-system,sans-serif">
+<rect x="1" y="1" width="758" height="378" rx="14" fill="#ffffff" stroke="#e2e8f0" stroke-width="2"/>
+<defs>
+<marker id="a" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L9,3 L0,6 Z" fill="#0369a1"/></marker>
+<marker id="g" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L9,3 L0,6 Z" fill="#16a34a"/></marker>
+</defs>
+<text x="36" y="46" font-size="21" font-weight="700" fill="#0f172a">Synchronous replication</text>
+<text x="36" y="70" font-size="13.5" fill="#64748b">The write is confirmed only after every node acknowledges &#8212; strong consistency, higher latency</text>
+<g text-anchor="middle">
+<rect x="40" y="160" width="120" height="60" rx="12" fill="#f1f5f9" stroke="#94a3b8" stroke-width="2"/>
+<text x="100" y="196" font-size="15" font-weight="600" fill="#0f172a">Client</text>
+<rect x="250" y="160" width="130" height="60" rx="12" fill="#eff6ff" stroke="#0369a1" stroke-width="2"/>
+<text x="315" y="196" font-size="15" font-weight="600" fill="#0f172a">Primary</text>
+<rect x="540" y="96" width="150" height="50" rx="10" fill="#eff6ff" stroke="#0369a1" stroke-width="2"/>
+<text x="615" y="126" font-size="14" font-weight="600" fill="#0f172a">Replica 1</text>
+<rect x="540" y="165" width="150" height="50" rx="10" fill="#eff6ff" stroke="#0369a1" stroke-width="2"/>
+<text x="615" y="195" font-size="14" font-weight="600" fill="#0f172a">Replica 2</text>
+<rect x="540" y="234" width="150" height="50" rx="10" fill="#eff6ff" stroke="#0369a1" stroke-width="2"/>
+<text x="615" y="264" font-size="14" font-weight="600" fill="#0f172a">Replica 3</text>
+</g>
+<line x1="162" y1="182" x2="246" y2="182" stroke="#0369a1" stroke-width="2" marker-end="url(#a)"/>
+<text x="204" y="174" text-anchor="middle" font-size="11.5" fill="#475569">write</text>
+<g stroke="#0369a1" stroke-width="2" fill="none" marker-end="url(#a)">
+<path d="M382 178 C 460 150, 470 130, 536 121"/>
+<path d="M384 190 H 536"/>
+<path d="M382 202 C 460 230, 470 250, 536 259"/>
+</g>
+<text x="470" y="196" text-anchor="middle" font-size="11.5" fill="#475569">apply + wait for ACK</text>
+<path d="M100 222 V 300 H 315 V 222" fill="none" stroke="#16a34a" stroke-width="2" marker-end="url(#g)"/>
+<text x="207" y="318" text-anchor="middle" font-size="12" fill="#16a34a" font-weight="600">success &#8212; only after ALL replicas ACK</text>
+</svg>

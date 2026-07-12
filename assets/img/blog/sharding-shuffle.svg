@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 360" font-family="system-ui,-apple-system,sans-serif">
+<rect x="1" y="1" width="758" height="358" rx="14" fill="#ffffff" stroke="#e2e8f0" stroke-width="2"/>
+<text x="36" y="46" font-size="21" font-weight="700" fill="#0f172a">Shuffle sharding</text>
+<text x="36" y="70" font-size="13.5" fill="#64748b">Each customer gets a shuffled subset of shards, containing the blast radius of a failure</text>
+<g text-anchor="middle" font-size="13" font-weight="600" fill="#0f172a">
+<rect x="120" y="150" width="70" height="60" rx="9" fill="#dbeafe" stroke="#0369a1" stroke-width="2"/><text x="155" y="186">S1</text>
+<rect x="205" y="150" width="70" height="60" rx="9" fill="#f1f5f9" stroke="#94a3b8" stroke-width="2"/><text x="240" y="186">S2</text>
+<rect x="290" y="150" width="70" height="60" rx="9" fill="#dbeafe" stroke="#0369a1" stroke-width="2"/><text x="325" y="186">S3</text>
+<rect x="375" y="150" width="70" height="60" rx="9" fill="#fee2e2" stroke="#dc2626" stroke-width="2"/><text x="410" y="182">S4</text><text x="410" y="204" font-size="10" font-weight="500" fill="#dc2626">failed</text>
+<rect x="460" y="150" width="70" height="60" rx="9" fill="#dcfce7" stroke="#16a34a" stroke-width="2"/><text x="495" y="186">S5</text>
+<rect x="545" y="150" width="70" height="60" rx="9" fill="#dcfce7" stroke="#16a34a" stroke-width="2"/><text x="580" y="186">S6</text>
+</g>
+<g font-size="12.5">
+<text x="120" y="255" fill="#0369a1" font-weight="600">Customer A &#8594; { S1, S3 }</text>
+<text x="120" y="280" fill="#16a34a" font-weight="600">Customer B &#8594; { S5, S6 }</text>
+<text x="120" y="305" fill="#dc2626" font-weight="600">Customer using S4 &#8594; only that subset is affected</text>
+</g>
+</svg>
