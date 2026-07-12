@@ -1,0 +1,63 @@
+<!-- Local override of portfolYOU's _includes/projects/index.html.
+     Only change vs the theme: the Local Projects loop runs BEFORE the Remote
+     Projects loop, so local cards (e.g. Azure FinOps Optimizer) appear at the
+     top of the list instead of after every GitHub repo. -->
+
+<div class="card-columns m-3 mt-5">
+
+  <!-- Local Projects (rendered first so they sit at the top) -->
+  {% for project in site.projects %}
+
+    {%- assign project_type  = "local" -%}
+    {%- assign project_id    = project.name | slugify -%}
+    {%- assign project_img   = project.image -%}
+    {%- assign project_name  = project.name -%}
+    {%- assign project_desc  = project.description -%}
+    {%- assign project_tools = project.tools -%}
+
+    {%- if project.external_url -%}
+      {%- assign project_url = project.external_url -%}
+      {%- assign external    = true -%}
+    {%- else -%}
+      {%- assign project_url = project.url | relative_url -%}
+      {%- assign external    = false -%}
+    {%- endif -%}
+
+    {% include projects/project-card.html %}
+
+  {% endfor %}
+
+  <!-- Remote Projects -->
+  {% for remote_project in page.remote_projects %}
+
+    {%- for repo in site.github.public_repositories -%}
+
+      {%- if remote_project == repo.name -%}
+
+        {%- assign project = repo -%}
+        {%- assign words = project.name | split: '-' -%}
+
+        {%- capture titlecase -%}
+          {%- for word in words -%}
+            {{ word | capitalize | append: ' ' }}
+          {%- endfor -%}
+        {%- endcapture -%}
+
+        {%- assign project_type  = "remote" -%}
+        {%- assign project_id    = project.name -%}
+        {%- assign project_img   = false -%}
+        {%- assign project_name  = titlecase | strip -%}
+        {%- assign project_desc  = project.description -%}
+        {%- assign project_url   = project.html_url -%}
+        {%- assign project_tools = project.topics -%}
+        {%- assign external      = true -%}
+
+        {% include projects/project-card.html %}
+
+      {%- endif -%}
+
+    {%- endfor -%}
+
+  {% endfor %}
+
+</div>
